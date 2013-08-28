@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>Olentangy</string>
+		<key>mascot</key>
+		<string>Braves</string>
+		<key>locationStreet</key>
+		<string>675 Lewis Center Drive</string>
+		<key>locationCity</key>
+		<string>Lewis Center</string>
+		<key>locationState</key>
+		<string>OH</string>
+		<key>locationZip</key>
+		<string>43035</string>
+		<key>gameAddressForMap</key>
+		<string>675+Lewis+Center+Drive,+Lewis+Center,+OH,+43035</string>
+		<key>gradient_darkR</key>
+		<string>10</string>
+		<key>gradient_darkG</key>
+		<string>108</string>
+		<key>gradient_darkB</key>
+		<string>177</string>
+		<key>gradient_lightR</key>
+		<string>246</string>
+		<key>gradient_lightG</key>
+		<string>219</string>
+		<key>gradient_lightB</key>
+		<string>125</string>
+	</dict>
+</array>
+</plist>

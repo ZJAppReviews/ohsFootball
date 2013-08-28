@@ -36,5 +36,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>JerseyLetters.ttf</string>
+	</array>
 </dict>
 </plist>
