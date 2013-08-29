@@ -15,11 +15,12 @@
 
 @implementation MainViewController
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title = @"News";
+    self.title = @"User Log In";
 
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;

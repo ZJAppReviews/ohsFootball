@@ -13,14 +13,14 @@
 		2401EEB717CC0A1800C58BE5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2401EEB517CC0A1800C58BE5 /* InfoPlist.strings */; };
 		2401EEB917CC0A1800C58BE5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2401EEB817CC0A1800C58BE5 /* main.m */; };
 		2401EEBD17CC0A1800C58BE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2401EEBC17CC0A1800C58BE5 /* AppDelegate.m */; };
-		2401EEBF17CC0A1800C58BE5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 2401EEBE17CC0A1800C58BE5 /* Default.png */; };
-		2401EEC117CC0A1800C58BE5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2401EEC017CC0A1800C58BE5 /* Default@2x.png */; };
-		2401EEC317CC0A1800C58BE5 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2401EEC217CC0A1800C58BE5 /* Default-568h@2x.png */; };
 		2401EEC617CC0A1800C58BE5 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2401EEC417CC0A1800C58BE5 /* MainStoryboard.storyboard */; };
 		2401EEC917CC0A1800C58BE5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2401EEC817CC0A1800C58BE5 /* ViewController.m */; };
 		2401EED017CC0A3D00C58BE5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EECF17CC0A3D00C58BE5 /* Parse.framework */; };
 		2401EED217CC0B6D00C58BE5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EED117CC0B6D00C58BE5 /* AudioToolbox.framework */; };
 		2401EED417CC0B7E00C58BE5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EED317CC0B7E00C58BE5 /* CFNetwork.framework */; };
+		24089C0E17CFAEE200FA9598 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24089C0B17CFAEE200FA9598 /* Default-568h@2x.png */; };
+		24089C0F17CFAEE200FA9598 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 24089C0C17CFAEE200FA9598 /* Default.png */; };
+		24089C1017CFAEE200FA9598 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24089C0D17CFAEE200FA9598 /* Default@2x.png */; };
 		244AFC9B17CE50D200273EF6 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 244AFC9A17CE50D200273EF6 /* ScheduleViewController.m */; };
 		244AFC9E17CE50E600273EF6 /* ScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 244AFC9D17CE50E600273EF6 /* ScheduleCell.m */; };
 		24725FE317CD4204007DB005 /* team_info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24CB8D3F17CD205C00F49A31 /* team_info.plist */; };
@@ -38,8 +38,6 @@
 		24813A2017CDB68D00DAD46F /* polaroid_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24813A1E17CDB68D00DAD46F /* polaroid_icon@2x.png */; };
 		24813A2317CDB69800DAD46F /* gear_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 24813A2117CDB69800DAD46F /* gear_icon.png */; };
 		24813A2417CDB69800DAD46F /* gear_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24813A2217CDB69800DAD46F /* gear_icon@2x.png */; };
-		24813A2717CDB71400DAD46F /* Olentangy_Gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 24813A2517CDB71400DAD46F /* Olentangy_Gradient.png */; };
-		24813A2817CDB71400DAD46F /* Olentangy_Gradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24813A2617CDB71400DAD46F /* Olentangy_Gradient@2x.png */; };
 		24813A2C17CDB94D00DAD46F /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24813A2B17CDB94D00DAD46F /* SidebarViewController.m */; };
 		248ED15017CEE67800CAE0C9 /* freshmen_roster_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 248ED14617CEE67800CAE0C9 /* freshmen_roster_icon.png */; };
 		248ED15117CEE67800CAE0C9 /* freshmen_roster_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 248ED14717CEE67800CAE0C9 /* freshmen_roster_icon@2x.png */; };
@@ -118,15 +116,15 @@
 		2401EEBA17CC0A1800C58BE5 /* OHSFootball-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OHSFootball-Prefix.pch"; sourceTree = "<group>"; };
 		2401EEBB17CC0A1800C58BE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2401EEBC17CC0A1800C58BE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2401EEBE17CC0A1800C58BE5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		2401EEC017CC0A1800C58BE5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		2401EEC217CC0A1800C58BE5 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		2401EEC517CC0A1800C58BE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		2401EEC717CC0A1800C58BE5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2401EEC817CC0A1800C58BE5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2401EECF17CC0A3D00C58BE5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		2401EED117CC0B6D00C58BE5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2401EED317CC0B7E00C58BE5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		24089C0B17CFAEE200FA9598 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		24089C0C17CFAEE200FA9598 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		24089C0D17CFAEE200FA9598 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		244AFC9917CE50D200273EF6 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		244AFC9A17CE50D200273EF6 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		244AFC9C17CE50E600273EF6 /* ScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleCell.h; sourceTree = "<group>"; };
@@ -147,8 +145,6 @@
 		24813A1E17CDB68D00DAD46F /* polaroid_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "polaroid_icon@2x.png"; sourceTree = "<group>"; };
 		24813A2117CDB69800DAD46F /* gear_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gear_icon.png; sourceTree = "<group>"; };
 		24813A2217CDB69800DAD46F /* gear_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gear_icon@2x.png"; sourceTree = "<group>"; };
-		24813A2517CDB71400DAD46F /* Olentangy_Gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Olentangy_Gradient.png; sourceTree = "<group>"; };
-		24813A2617CDB71400DAD46F /* Olentangy_Gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Olentangy_Gradient@2x.png"; sourceTree = "<group>"; };
 		24813A2A17CDB94D00DAD46F /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
 		24813A2B17CDB94D00DAD46F /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		248ED14617CEE67800CAE0C9 /* freshmen_roster_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = freshmen_roster_icon.png; sourceTree = "<group>"; };
@@ -305,11 +301,18 @@
 				2401EEB517CC0A1800C58BE5 /* InfoPlist.strings */,
 				2401EEB817CC0A1800C58BE5 /* main.m */,
 				2401EEBA17CC0A1800C58BE5 /* OHSFootball-Prefix.pch */,
-				2401EEBE17CC0A1800C58BE5 /* Default.png */,
-				2401EEC017CC0A1800C58BE5 /* Default@2x.png */,
-				2401EEC217CC0A1800C58BE5 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		24089C0A17CFAEE200FA9598 /* Launch Images */ = {
+			isa = PBXGroup;
+			children = (
+				24089C0B17CFAEE200FA9598 /* Default-568h@2x.png */,
+				24089C0C17CFAEE200FA9598 /* Default.png */,
+				24089C0D17CFAEE200FA9598 /* Default@2x.png */,
+			);
+			path = "Launch Images";
 			sourceTree = "<group>";
 		};
 		244AFC9817CE4E9E00273EF6 /* View Controllers */ = {
@@ -344,15 +347,6 @@
 				24725FE917CD4EAD007DB005 /* SWRevealViewController.m */,
 			);
 			name = Library;
-			sourceTree = "<group>";
-		};
-		24813A2917CDB71E00DAD46F /* Gradients */ = {
-			isa = PBXGroup;
-			children = (
-				24813A2517CDB71400DAD46F /* Olentangy_Gradient.png */,
-				24813A2617CDB71400DAD46F /* Olentangy_Gradient@2x.png */,
-			);
-			name = Gradients;
 			sourceTree = "<group>";
 		};
 		248ED15D17CEE90E00CAE0C9 /* SideBar Controller */ = {
@@ -390,7 +384,7 @@
 		24B4915617CC798E007E85CE /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				24813A2917CDB71E00DAD46F /* Gradients */,
+				24089C0A17CFAEE200FA9598 /* Launch Images */,
 				24B4915717CC798E007E85CE /* App Icon */,
 				24B4917517CC798E007E85CE /* defaultPictures */,
 				24B4917817CC798E007E85CE /* icons */,
@@ -550,7 +544,6 @@
 				2401EEB717CC0A1800C58BE5 /* InfoPlist.strings in Resources */,
 				24B491C417CC798E007E85CE /* captain_icon.png in Resources */,
 				24B491BF17CC798E007E85CE /* bug_icon@2x.png in Resources */,
-				2401EEBF17CC0A1800C58BE5 /* Default.png in Resources */,
 				24B491CB17CC798E007E85CE /* home_icon.png in Resources */,
 				24B491BD17CC798E007E85CE /* blank_icon.png in Resources */,
 				24B491C517CC798E007E85CE /* clock_icon.png in Resources */,
@@ -558,8 +551,8 @@
 				24B491D617CC798E007E85CE /* scoreNumbers_0.png in Resources */,
 				24B491CE17CC798E007E85CE /* map_icon.png in Resources */,
 				24B4915317CC7965007E85CE /* JerseyLetters.ttf in Resources */,
+				24089C1017CFAEE200FA9598 /* Default@2x.png in Resources */,
 				248ED15517CEE67800CAE0C9 /* jv_schedule_icon@2x.png in Resources */,
-				2401EEC117CC0A1800C58BE5 /* Default@2x.png in Resources */,
 				248ED15417CEE67800CAE0C9 /* jv_schedule_icon.png in Resources */,
 				24B4915417CC7965007E85CE /* Roboto-Light.ttf in Resources */,
 				24B491BB17CC798E007E85CE /* away_icon.png in Resources */,
@@ -576,7 +569,6 @@
 				24B491CD17CC798E007E85CE /* letterWinner_icon.png in Resources */,
 				24B491C717CC798E007E85CE /* compass_icon.png in Resources */,
 				24B491D117CC798E007E85CE /* signpost_icon@2x.png in Resources */,
-				2401EEC317CC0A1800C58BE5 /* Default-568h@2x.png in Resources */,
 				24B491D417CC798E007E85CE /* twitter_icon.png in Resources */,
 				24B491D817CC798E007E85CE /* scoreNumbers_2.png in Resources */,
 				24B491C217CC798E007E85CE /* calendar_icon.png in Resources */,
@@ -584,9 +576,10 @@
 				24B491CC17CC798E007E85CE /* home_icon@2x.png in Resources */,
 				24B491DF17CC798E007E85CE /* scoreNumbers_9.png in Resources */,
 				24813A1717CDB46300DAD46F /* clipboard_icon.png in Resources */,
-				24813A2717CDB71400DAD46F /* Olentangy_Gradient.png in Resources */,
+				24089C0E17CFAEE200FA9598 /* Default-568h@2x.png in Resources */,
 				24B491DD17CC798E007E85CE /* scoreNumbers_7.png in Resources */,
 				24B491D017CC798E007E85CE /* signpost_icon.png in Resources */,
+				24089C0F17CFAEE200FA9598 /* Default.png in Resources */,
 				24B4919F17CC798E007E85CE /* app_icon_7@2x.png in Resources */,
 				24B491BC17CC798E007E85CE /* away_icon@2x.png in Resources */,
 				24813A2017CDB68D00DAD46F /* polaroid_icon@2x.png in Resources */,
@@ -613,7 +606,6 @@
 				24B491C317CC798E007E85CE /* calendar_icon@2x.png in Resources */,
 				248ED15717CEE67800CAE0C9 /* varsity_roster_icon@2x.png in Resources */,
 				24B491C817CC798E007E85CE /* compass_icon@2x.png in Resources */,
-				24813A2817CDB71400DAD46F /* Olentangy_Gradient@2x.png in Resources */,
 				248ED15317CEE67800CAE0C9 /* freshmen_schedule_icon@2x.png in Resources */,
 				24B491DC17CC798E007E85CE /* scoreNumbers_6.png in Resources */,
 				24B491A217CC798E007E85CE /* icon_spotlight.png in Resources */,
