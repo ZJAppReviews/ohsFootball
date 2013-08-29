@@ -17,6 +17,7 @@
 @implementation RosterViewController
 
 @synthesize playerData;
+@synthesize rosterType;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -33,13 +34,7 @@
     [super viewDidLoad];
     
     // support side bar navigation
-    if ([self.restorationIdentifier isEqualToString:@"varsityRosterTableView"]) {
-        self.title = @"Varsity Roster";
-    }
-    
-    else if ([self.restorationIdentifier isEqualToString:@"freshmenRosterTableView"]) {
-        self.title = @"Freshmen Roster";
-    }
+    self.title = [NSString stringWithFormat:@"%@ Roster", rosterType];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
@@ -69,6 +64,9 @@
     self = [super initWithCoder:aCoder];
     if (self) {
         
+        
+        NSLog(self.restorationIdentifier);
+        
         if ([self.restorationIdentifier isEqualToString:@"varsityRosterTableView"]) {
             self.parseClassName = @"varsity_roster";
         }
@@ -76,7 +74,6 @@
         else if ([self.restorationIdentifier isEqualToString:@"freshmenRosterTableView"]) {
             self.parseClassName = @"freshmen_roster";
         }
-        
         
         // The className to query on
         //        self.parseClassName = @"varsity_roster";
@@ -113,15 +110,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
-    static NSString *CellIdentifier = @"varsityRosterCell";
-    
-    if ([self.restorationIdentifier isEqualToString:@"varsityRosterTableView"]) {
-        CellIdentifier = @"varsityRosterCell";
-    }
-    
-    else if ([self.restorationIdentifier isEqualToString:@"freshmenRosterTableView"]) {
-        CellIdentifier = @"freshmenRosterCell";
-    }
+    static NSString *CellIdentifier = @"RosterCell";
     
     RosterCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
@@ -239,11 +228,11 @@
     // ----------------------------------------------------------------------------------------------------
     //      Thumbnail Image
     // ----------------------------------------------------------------------------------------------------
-    if ([self.restorationIdentifier isEqualToString:@"varsityRosterTableView"]) {
+    if ([self.rosterType isEqualToString:@"Varsity"]) {
         cell.thumbnailImage.image = [UIImage imageNamed:@"default_picture_right.png"];
     }
     
-    else if ([self.restorationIdentifier isEqualToString:@"freshmenRosterTableView"]) {
+    else if ([self.rosterType isEqualToString:@"Freshmen"]) {
         cell.thumbnailImage.image = [UIImage imageNamed:@"default_picture_left.png"];
     }
     

@@ -17,7 +17,6 @@
 @implementation ScheduleViewController
 
 @synthesize teamData, scheduleData;
-//@synthesize tableView;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -146,7 +145,7 @@
     // ----------------------------------------------------------------------------------------------------
     cell.teamName.text = [self.teamData objectAtIndex:0][@"name"];
     [cell.teamName setFont:[UIFont fontWithName:@"Roboto" size:19]];
-    cell.teamName.textColor = [UIColor blackColor];
+    cell.teamName.textColor = [UIColor whiteColor];
     cell.teamName.textAlignment = NSTextAlignmentLeft;
     
     // ----------------------------------------------------------------------------------------------------
@@ -154,7 +153,7 @@
     // ----------------------------------------------------------------------------------------------------
     cell.opponentTeamName.text = [object objectForKey:@"Opponent"];
     [cell.opponentTeamName setFont:[UIFont fontWithName:@"Roboto" size:19]];
-    cell.opponentTeamName.textColor = [UIColor blackColor];
+    cell.opponentTeamName.textColor = [UIColor whiteColor];
     cell.opponentTeamName.textAlignment = NSTextAlignmentLeft;
     
     // ----------------------------------------------------------------------------------------------------
@@ -202,18 +201,17 @@
     size_t gradientNumberOfLocations = 2;
     CGFloat gradientLocations[2] = { 0.0, 1.0 };
     
-    
     // Team Gradient
     // left color
-    CGFloat Lr = [[self.teamData objectAtIndex:0][@"gradient_lightR"] floatValue]/255.0;
-    CGFloat Lg = [[self.teamData objectAtIndex:0][@"gradient_lightG"] floatValue]/255.0;
-    CGFloat Lb = [[self.teamData objectAtIndex:0][@"gradient_lightB"] floatValue]/255.0;
+    CGFloat Lr = [[self.teamData objectAtIndex:0][@"gradient_darkR"] floatValue]/255.0;
+    CGFloat Lg = [[self.teamData objectAtIndex:0][@"gradient_darkG"] floatValue]/255.0;
+    CGFloat Lb = [[self.teamData objectAtIndex:0][@"gradient_darkB"] floatValue]/255.0;
     CGFloat La = 1.0f;
     
     // right color
-    CGFloat Rr = [[self.teamData objectAtIndex:0][@"gradient_darkR"] floatValue]/255.0;
-    CGFloat Rg = [[self.teamData objectAtIndex:0][@"gradient_darkG"] floatValue]/255.0;
-    CGFloat Rb = [[self.teamData objectAtIndex:0][@"gradient_darkB"] floatValue]/255.0;
+    CGFloat Rr = [[self.teamData objectAtIndex:0][@"gradient_lightR"] floatValue]/255.0;
+    CGFloat Rg = [[self.teamData objectAtIndex:0][@"gradient_lightG"] floatValue]/255.0;
+    CGFloat Rb = [[self.teamData objectAtIndex:0][@"gradient_lightB"] floatValue]/255.0;
     CGFloat Ra = 1.0f;
     
     
@@ -227,17 +225,16 @@
     
     // Opponent Gradient
     // left color
-    Lr = [[self.teamData objectAtIndex:0][@"gradient_lightR"] floatValue]/255.0;
-    Lg = [[self.teamData objectAtIndex:0][@"gradient_lightG"] floatValue]/255.0;
-    Lb = [[self.teamData objectAtIndex:0][@"gradient_lightB"] floatValue]/255.0;
+    Lr = [[object objectForKey:@"opponent_darkR"] floatValue]/255.0;
+    Lg = [[object objectForKey:@"opponent_darkG"] floatValue]/255.0;
+    Lb = [[object objectForKey:@"opponent_darkB"] floatValue]/255.0;
     La = 1.0f;
     
     // right color
-    Rr = [[self.teamData objectAtIndex:0][@"gradient_darkR"] floatValue]/255.0;
-    Rg = [[self.teamData objectAtIndex:0][@"gradient_darkG"] floatValue]/255.0;
-    Rb = [[self.teamData objectAtIndex:0][@"gradient_darkB"] floatValue]/255.0;
+    Rr = [[object objectForKey:@"opponent_lightR"] floatValue]/255.0;
+    Rg = [[object objectForKey:@"opponent_lightG"] floatValue]/255.0;
+    Rb = [[object objectForKey:@"opponent_lightB"] floatValue]/255.0;
     Ra = 1.0f;
-    
     
     CGFloat opponentGradientComponents[8] = { Lr, Lg, Lb, La, Rr, Rg, Rb, Ra};
     CGGradientRef opponentGradient = CGGradientCreateWithColorComponents (colorspace, opponentGradientComponents, gradientLocations, gradientNumberOfLocations);
@@ -246,13 +243,6 @@
     // draw gradient to image, apply to image view in storyboard
     UIImage *opponent_gradient = UIGraphicsGetImageFromCurrentImageContext();
     cell.opponentGradient.image = opponent_gradient;
-    
-    
-    
-    
-    
-    
-    
     
     // ----------------------------------------------------------------------------------------------------
     //      Game Scores
@@ -290,10 +280,10 @@
         }
     }
 
-    cell.teamScore_01.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", teamScore10]];
-    cell.teamScore_10.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", teamScore01]];
-    cell.opponentScore_01.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", opponentScore10]];
-    cell.opponentScore_10.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", opponentScore01]];
+    cell.teamScore_01.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", teamScore01]];
+    cell.teamScore_10.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", teamScore10]];
+    cell.opponentScore_01.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", opponentScore01]];
+    cell.opponentScore_10.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", opponentScore10]];
     
     // ----------------------------------------------------------------------------------------------------
     //      Turn Off Selection Highlighting for rows

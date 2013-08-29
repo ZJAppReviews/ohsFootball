@@ -8,14 +8,22 @@
 
 #import "SidebarViewController.h"
 #import "SWRevealViewController.h"
+#import "SideBarCell.h"
+#import "RosterViewController.h"
+#import "ScheduleViewController.h"
 
 
 @interface SidebarViewController ()
 
 @property (nonatomic, strong) NSArray *menuItems;
+@property (nonatomic, strong) NSArray *menuItemPrettyName;
+@property (nonatomic, strong) NSArray *menuItemThumbnailImageName;
+
 @end
 
 @implementation SidebarViewController
+
+@synthesize teamData;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,7 +45,25 @@
     _menuItems = @[@"title", @"varsity_Roster", @"freshmen_Roster",
                    @"varsity_schedule", @"jv_schedule", @"freshmen_schedule",
                    @"picWeek", @"feedback", @"developerInfo", @"logIn"];
-
+    
+    _menuItemPrettyName = @[@"title", @"Varsity Roster", @"Freshmen Roster",
+                            @"Varsity Schedule", @"JV Schedule", @"Freshmen Schedule",
+                            @"Picture of the Week", @"Feedback", @"Developer Info", @"Log In"];
+    
+    _menuItemThumbnailImageName = @[@"title", @"varsity_roster",
+                                    @"freshmen_roster",
+                                    @"varsity_schedule",
+                                    @"jv_schedule",
+                                    @"freshmen_schedule",
+                                    @"polaroid",
+                                    @"bullhorn",
+                                    @"gear",
+                                    @"lock"];
+    
+    // Find out the path of team_info.plist
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"team_info" ofType:@"plist"];
+    self.teamData = [NSMutableArray arrayWithContentsOfFile:path];
+    
 }
 
 - (void) prepareForSegue: (UIStoryboardSegue *) segue sender: (id) sender
@@ -48,13 +74,25 @@
     destViewController.title = [[_menuItems objectAtIndex:indexPath.row] capitalizedString];
     
     /*
-    // Set the photo if it navigates to the PhotoView
-    if ([segue.identifier isEqualToString:@"showPhoto"]) {
-        PhotoViewController *photoController = (PhotoViewController*)segue.destinationViewController;
-        NSString *photoFilename = [NSString stringWithFormat:@"%@_photo.jpg", [_menuItems objectAtIndex:indexPath.row]];
-        photoController.photoFilename = photoFilename;
+     // Set the photo if it navigates to the PhotoView
+     if ([segue.identifier isEqualToString:@"showPhoto"]) {
+     PhotoViewController *photoController = (PhotoViewController*)segue.destinationViewController;
+     NSString *photoFilename = [NSString stringWithFormat:@"%@_photo.jpg", [_menuItems objectAtIndex:indexPath.row]];
+     photoController.photoFilename = photoFilename;
+     }
+     */
+    
+    if ([segue.identifier isEqualToString:@"showVarsityRoster"]) {
+        RosterViewController *rosterController = (RosterViewController*)segue.destinationViewController;
+        rosterController.rosterType = @"Varsity";
+        
     }
-    */
+    
+    if ([segue.identifier isEqualToString:@"showFreshmenRoster"]) {
+        RosterViewController *rosterController = (RosterViewController*)segue.destinationViewController;
+        rosterController.rosterType = @"Freshmen";
+        
+    }
     
     if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
         SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
@@ -95,7 +133,60 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    
+    
+    SideBarCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // ----------------------------------------------------------------------------------------------------
+    //      Label
+    // ----------------------------------------------------------------------------------------------------
+    cell.rowLabel.text = [self.menuItemPrettyName objectAtIndex:indexPath.row];
+    [cell.rowLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
+    cell.rowLabel.textColor = [UIColor whiteColor];
+    
+    // ----------------------------------------------------------------------------------------------------
+    //      Thumbnail Image
+    // ----------------------------------------------------------------------------------------------------
+    cell.rowThumbnail.image = [UIImage imageNamed:
+                               [NSString stringWithFormat:@"%@_icon.png",
+                                [self.menuItemThumbnailImageName objectAtIndex:indexPath.row]]];
+    
+    // ----------------------------------------------------------------------------------------------------
+    //      Team Gradient
+    // ----------------------------------------------------------------------------------------------------
+    
+    // image size, just needs to be 1px high
+    CGSize size = CGSizeMake(320, 1);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
+    
+    // set gradient 'anchor' points
+    size_t gradientNumberOfLocations = 2;
+    CGFloat gradientLocations[2] = { 0.0, 1.0 };
+    
+    // left color
+    CGFloat Lr = [[self.teamData objectAtIndex:0][@"gradient_darkR"] floatValue]/255.0;
+    CGFloat Lg = [[self.teamData objectAtIndex:0][@"gradient_darkG"] floatValue]/255.0;
+    CGFloat Lb = [[self.teamData objectAtIndex:0][@"gradient_darkB"] floatValue]/255.0;
+    CGFloat La = 1.0f;
+    
+    // right color
+    CGFloat Rr = [[self.teamData objectAtIndex:0][@"gradient_lightR"] floatValue]/255.0;
+    CGFloat Rg = [[self.teamData objectAtIndex:0][@"gradient_lightG"] floatValue]/255.0;
+    CGFloat Rb = [[self.teamData objectAtIndex:0][@"gradient_lightB"] floatValue]/255.0;
+    CGFloat Ra = 1.0f;
+    
+    
+    CGFloat gradientComponents[8] = { Lr, Lg, Lb, La, Rr, Rg, Rb, Ra};
+    CGGradientRef gradient = CGGradientCreateWithColorComponents (colorspace, gradientComponents, gradientLocations, gradientNumberOfLocations);
+    CGContextDrawLinearGradient(context, gradient, CGPointMake(0, 0.5), CGPointMake(size.width, size.height), 0);
+    
+    // draw gradient to image, apply to image view in storyboard
+    UIImage *gradient01 = UIGraphicsGetImageFromCurrentImageContext();
+    cell.rowGradient.image = gradient01;
+    
     
     return cell;
 }
