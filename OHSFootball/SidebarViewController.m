@@ -94,6 +94,23 @@
         
     }
     
+    if ([segue.identifier isEqualToString:@"showVarsitySchedule"]) {
+        ScheduleViewController *scheduleController = (ScheduleViewController*)segue.destinationViewController;
+        scheduleController.scheduleType = @"Varsity";
+        
+    }
+    if ([segue.identifier isEqualToString:@"showJVSchedule"]) {
+        ScheduleViewController *scheduleController = (ScheduleViewController*)segue.destinationViewController;
+        scheduleController.scheduleType = @"Junior Varsity";
+        
+    }
+    if ([segue.identifier isEqualToString:@"showFreshmenSchedule"]) {
+        ScheduleViewController *scheduleController = (ScheduleViewController*)segue.destinationViewController;
+        scheduleController.scheduleType = @"Freshmen";
+        
+    }
+    
+    
     if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
         SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
         

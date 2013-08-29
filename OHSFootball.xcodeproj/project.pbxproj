@@ -285,15 +285,10 @@
 		2401EEB217CC0A1800C58BE5 /* OHSFootball */ = {
 			isa = PBXGroup;
 			children = (
-				24CB8D3F17CD205C00F49A31 /* team_info.plist */,
-				24B4915617CC798E007E85CE /* Images */,
-				24B4914F17CC7965007E85CE /* Fonts */,
 				2401EEBB17CC0A1800C58BE5 /* AppDelegate.h */,
 				2401EEBC17CC0A1800C58BE5 /* AppDelegate.m */,
 				2401EEC417CC0A1800C58BE5 /* MainStoryboard.storyboard */,
-				244AFC9F17CE50EC00273EF6 /* Schedules */,
-				24B4914E17CC14C1007E85CE /* Rosters */,
-				244AFC9817CE4E9E00273EF6 /* Controll View Controllers */,
+				244AFC9817CE4E9E00273EF6 /* View Controllers */,
 				24725FEB17CD4EB4007DB005 /* Library */,
 				2401EEB317CC0A1800C58BE5 /* Supporting Files */,
 			);
@@ -303,6 +298,9 @@
 		2401EEB317CC0A1800C58BE5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				24B4915617CC798E007E85CE /* Images */,
+				24B4914F17CC7965007E85CE /* Fonts */,
+				24CB8D3F17CD205C00F49A31 /* team_info.plist */,
 				2401EEB417CC0A1800C58BE5 /* OHSFootball-Info.plist */,
 				2401EEB517CC0A1800C58BE5 /* InfoPlist.strings */,
 				2401EEB817CC0A1800C58BE5 /* main.m */,
@@ -314,16 +312,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		244AFC9817CE4E9E00273EF6 /* Controll View Controllers */ = {
+		244AFC9817CE4E9E00273EF6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				244AFC9F17CE50EC00273EF6 /* Schedules */,
+				24B4914E17CC14C1007E85CE /* Rosters */,
 				248ED15D17CEE90E00CAE0C9 /* SideBar Controller */,
 				24813A0217CDACEA00DAD46F /* MainViewController.h */,
 				24813A0317CDACEA00DAD46F /* MainViewController.m */,
 				2401EEC717CC0A1800C58BE5 /* ViewController.h */,
 				2401EEC817CC0A1800C58BE5 /* ViewController.m */,
 			);
-			name = "Controll View Controllers";
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		244AFC9F17CE50EC00273EF6 /* Schedules */ = {
@@ -518,6 +518,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Sam Gutentag";
+				TargetAttributes = {
+					2401EEA817CC0A1800C58BE5 = {
+						DevelopmentTeam = 3H96HK637P;
+					};
+				};
 			};
 			buildConfigurationList = 2401EEA417CC0A1800C58BE5 /* Build configuration list for PBXProject "OHSFootball" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -720,6 +725,8 @@
 		2401EECD17CC0A1800C58BE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -728,6 +735,7 @@
 				GCC_PREFIX_HEADER = "OHSFootball/OHSFootball-Prefix.pch";
 				INFOPLIST_FILE = "OHSFootball/OHSFootball-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -735,6 +743,8 @@
 		2401EECE17CC0A1800C58BE5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -743,6 +753,7 @@
 				GCC_PREFIX_HEADER = "OHSFootball/OHSFootball-Prefix.pch";
 				INFOPLIST_FILE = "OHSFootball/OHSFootball-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

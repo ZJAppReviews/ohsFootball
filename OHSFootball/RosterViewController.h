@@ -17,6 +17,5 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
 @property (weak, nonatomic) NSString *rosterType;
-@property (nonatomic, readonly) id sourceViewController;
 
 @end

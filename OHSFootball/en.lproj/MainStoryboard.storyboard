@@ -190,7 +190,7 @@
                                     <outlet property="rowGradient" destination="mOd-fp-qHi" id="3rr-xy-aLm"/>
                                     <outlet property="rowLabel" destination="3wn-aX-E8Z" id="23z-ht-rkH"/>
                                     <outlet property="rowThumbnail" destination="ahI-gJ-4Qa" id="0uP-lA-6Sw"/>
-                                    <segue destination="J8P-1h-9RL" kind="custom" customClass="SWRevealViewControllerSegue" id="FS5-wW-Zlw"/>
+                                    <segue destination="J8P-1h-9RL" kind="custom" identifier="showVarsitySchedule" customClass="SWRevealViewControllerSegue" id="l3Z-cP-syU"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="jv_schedule" id="aH9-Wa-fVI" customClass="SideBarCell">
@@ -221,6 +221,7 @@
                                     <outlet property="rowGradient" destination="3Do-5e-tHM" id="2oQ-eY-79v"/>
                                     <outlet property="rowLabel" destination="SCF-pP-sfx" id="yJf-5r-1v9"/>
                                     <outlet property="rowThumbnail" destination="7z1-pO-Rq9" id="wPA-dI-ArR"/>
+                                    <segue destination="s6r-E5-geZ" kind="custom" identifier="showJVSchedule" customClass="SWRevealViewControllerSegue" id="xsG-X7-P6V"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="freshmen_schedule" id="MMQ-rM-scK" customClass="SideBarCell">
@@ -251,6 +252,7 @@
                                     <outlet property="rowGradient" destination="uAz-bw-WQe" id="lmU-w0-PXk"/>
                                     <outlet property="rowLabel" destination="E2W-k5-rQO" id="M4a-Ih-18o"/>
                                     <outlet property="rowThumbnail" destination="jlO-zn-zih" id="JaG-0R-Du9"/>
+                                    <segue destination="90o-Ph-G2N" kind="custom" identifier="showFreshmenSchedule" customClass="SWRevealViewControllerSegue" id="cY1-Pj-mU7"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="picWeek" id="QNd-l0-aMU" customClass="SideBarCell">
@@ -394,7 +396,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="varsityRosterCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RosterCell" rowHeight="80" id="5ex-SB-koQ" customClass="RosterCell">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RosterCell" rowHeight="80" id="5ex-SB-koQ" customClass="RosterCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="5ex-SB-koQ" id="iA4-5g-miL">
@@ -496,7 +498,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="varsityScheduleCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="varsityScheduleCell" rowHeight="110" id="Ret-0f-Jdy" customClass="ScheduleCell">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScheduleCell" rowHeight="110" id="Ret-0f-Jdy" customClass="ScheduleCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="Ret-0f-Jdy" id="DZY-JA-quM">
@@ -559,17 +561,17 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="gameDate" destination="KRs-HA-sCP" id="Dfs-o8-l5D"/>
-                                    <outlet property="gameTime" destination="zmL-TK-Ebg" id="RzU-qw-tTx"/>
-                                    <outlet property="homeGameIndicator" destination="yul-eU-Wvw" id="w8u-HM-emb"/>
-                                    <outlet property="opponentGradient" destination="z2U-HW-B9Z" id="a9P-hB-sRo"/>
-                                    <outlet property="opponentScore_01" destination="8sL-ae-PjS" id="hWY-ad-TTU"/>
-                                    <outlet property="opponentScore_10" destination="zB5-RW-5cQ" id="fd9-xg-5e2"/>
-                                    <outlet property="opponentTeamName" destination="zVs-53-0eC" id="4dg-Ei-N49"/>
-                                    <outlet property="teamGradient" destination="l1N-Re-ust" id="GVz-6s-VgM"/>
-                                    <outlet property="teamName" destination="CRs-3H-u7G" id="wls-AE-USH"/>
-                                    <outlet property="teamScore_01" destination="y6R-F9-Qun" id="KHR-B0-Ucr"/>
-                                    <outlet property="teamScore_10" destination="Qng-rJ-tCQ" id="b0V-0n-Eo9"/>
+                                    <outlet property="gameDate" destination="KRs-HA-sCP" id="Akd-aa-rhj"/>
+                                    <outlet property="gameTime" destination="zmL-TK-Ebg" id="wRr-CX-Jdx"/>
+                                    <outlet property="homeGameIndicator" destination="yul-eU-Wvw" id="CXh-Gc-OvS"/>
+                                    <outlet property="opponentGradient" destination="z2U-HW-B9Z" id="t3y-S1-gJi"/>
+                                    <outlet property="opponentScore_01" destination="8sL-ae-PjS" id="T5W-hy-NMq"/>
+                                    <outlet property="opponentScore_10" destination="zB5-RW-5cQ" id="tUm-tg-7cy"/>
+                                    <outlet property="opponentTeamName" destination="zVs-53-0eC" id="yTc-pj-IA5"/>
+                                    <outlet property="teamGradient" destination="l1N-Re-ust" id="s2v-I0-icz"/>
+                                    <outlet property="teamName" destination="CRs-3H-u7G" id="auV-Lg-CYM"/>
+                                    <outlet property="teamScore_01" destination="y6R-F9-Qun" id="O0x-24-MpL"/>
+                                    <outlet property="teamScore_10" destination="Qng-rJ-tCQ" id="aKu-3h-MOr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -587,7 +589,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ft5-Eu-vg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2261" y="-1548"/>
+            <point key="canvasLocation" x="1767" y="-1970"/>
         </scene>
         <!--Roster View Controller-->
         <scene sceneID="y7c-4F-zPJ">
@@ -598,7 +600,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="varsityRosterCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RosterCell" rowHeight="80" id="2Po-Zh-pFJ" customClass="RosterCell">
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RosterCell" rowHeight="80" id="2Po-Zh-pFJ" customClass="RosterCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="2Po-Zh-pFJ" id="e9u-xv-LH5">
@@ -689,7 +691,211 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18h-tw-BAV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2155" y="-2695"/>
+            <point key="canvasLocation" x="2139" y="-2679"/>
+        </scene>
+        <!--Schedule View Controller-->
+        <scene sceneID="hgM-oL-iXj">
+            <objects>
+                <tableViewController storyboardIdentifier="jvScheduleTableView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s6r-E5-geZ" customClass="ScheduleViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QN5-ec-4PQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScheduleCell" rowHeight="110" id="sKg-aG-K8E" customClass="ScheduleCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="110"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="sKg-aG-K8E" id="Vvh-yH-CbA">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WLy-4s-Buw">
+                                            <rect key="frame" x="0.0" y="6" width="320" height="38"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ho7-7i-zGs">
+                                            <rect key="frame" x="0.0" y="50" width="320" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hz5-8Z-p76">
+                                            <rect key="frame" x="30" y="5" width="225" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opponent Team Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIR-4t-D5t">
+                                            <rect key="frame" x="30" y="50" width="225" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rj2-db-Ifw">
+                                            <rect key="frame" x="261" y="5" width="27" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ehE-FE-09F">
+                                            <rect key="frame" x="261" y="50" width="27" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nqe-qa-5zJ">
+                                            <rect key="frame" x="291" y="5" width="27" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4GF-uR-LSR">
+                                            <rect key="frame" x="291" y="50" width="27" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Esd-hE-XMd">
+                                            <rect key="frame" x="3" y="13" width="24" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vn2-tq-Ly6">
+                                            <rect key="frame" x="3" y="91" width="154" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkm-e0-JIE">
+                                            <rect key="frame" x="163" y="91" width="154" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="gameDate" destination="vn2-tq-Ly6" id="hHF-x6-X6o"/>
+                                    <outlet property="gameTime" destination="Jkm-e0-JIE" id="qHC-z8-FrW"/>
+                                    <outlet property="homeGameIndicator" destination="Esd-hE-XMd" id="dQU-Wy-z2R"/>
+                                    <outlet property="opponentGradient" destination="Ho7-7i-zGs" id="1Jg-oc-IcJ"/>
+                                    <outlet property="opponentScore_01" destination="4GF-uR-LSR" id="NGR-ir-DgQ"/>
+                                    <outlet property="opponentScore_10" destination="ehE-FE-09F" id="iBR-Wi-w9Y"/>
+                                    <outlet property="opponentTeamName" destination="EIR-4t-D5t" id="cEM-BF-vy0"/>
+                                    <outlet property="teamGradient" destination="WLy-4s-Buw" id="MXZ-Fc-r2z"/>
+                                    <outlet property="teamName" destination="Hz5-8Z-p76" id="Jd6-QH-cDV"/>
+                                    <outlet property="teamScore_01" destination="Nqe-qa-5zJ" id="yc6-Wi-K1Q"/>
+                                    <outlet property="teamScore_10" destination="Rj2-db-Ifw" id="dVU-Gb-X3W"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="s6r-E5-geZ" id="Hyf-ec-DgP"/>
+                            <outlet property="delegate" destination="s6r-E5-geZ" id="kv0-AN-4d8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="f7k-e1-Vj1">
+                        <barButtonItem key="leftBarButtonItem" image="menu_icon.png" id="Geg-tJ-MDg"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sidebarButton" destination="Geg-tJ-MDg" id="w2y-4Y-tsj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rKt-FB-yD3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2139" y="-1970"/>
+        </scene>
+        <!--Schedule View Controller-->
+        <scene sceneID="vPO-ur-82p">
+            <objects>
+                <tableViewController storyboardIdentifier="freshmenScheduleTableView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="90o-Ph-G2N" customClass="ScheduleViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lxh-ih-oJk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScheduleCell" rowHeight="110" id="6K4-OS-e1y" customClass="ScheduleCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="110"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="6K4-OS-e1y" id="ekz-nt-1qE">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UW9-IN-rTj">
+                                            <rect key="frame" x="0.0" y="6" width="320" height="38"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xwF-yW-Xfb">
+                                            <rect key="frame" x="0.0" y="50" width="320" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6N-S7-AYp">
+                                            <rect key="frame" x="30" y="5" width="225" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opponent Team Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWE-tT-qHe">
+                                            <rect key="frame" x="30" y="50" width="225" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Al1-6c-ncf">
+                                            <rect key="frame" x="261" y="5" width="27" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pey-vi-FUb">
+                                            <rect key="frame" x="261" y="50" width="27" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IHv-ic-WD3">
+                                            <rect key="frame" x="291" y="5" width="27" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ziu-ny-7iz">
+                                            <rect key="frame" x="291" y="50" width="27" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvH-U2-2j3">
+                                            <rect key="frame" x="3" y="13" width="24" height="24"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPg-DG-eQM">
+                                            <rect key="frame" x="3" y="91" width="154" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gde-Pa-riO">
+                                            <rect key="frame" x="163" y="91" width="154" height="20"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="gameDate" destination="rPg-DG-eQM" id="rZK-1A-a53"/>
+                                    <outlet property="gameTime" destination="Gde-Pa-riO" id="W2s-7V-VKj"/>
+                                    <outlet property="homeGameIndicator" destination="gvH-U2-2j3" id="gfW-tg-Jnf"/>
+                                    <outlet property="opponentGradient" destination="xwF-yW-Xfb" id="vyW-Ha-HmB"/>
+                                    <outlet property="opponentScore_01" destination="ziu-ny-7iz" id="EjF-09-bnY"/>
+                                    <outlet property="opponentScore_10" destination="Pey-vi-FUb" id="LJ2-Nd-usc"/>
+                                    <outlet property="opponentTeamName" destination="hWE-tT-qHe" id="RBZ-cM-n4A"/>
+                                    <outlet property="teamGradient" destination="UW9-IN-rTj" id="fEn-Zg-wob"/>
+                                    <outlet property="teamName" destination="N6N-S7-AYp" id="gwA-lr-hw5"/>
+                                    <outlet property="teamScore_01" destination="IHv-ic-WD3" id="u7L-M5-TJe"/>
+                                    <outlet property="teamScore_10" destination="Al1-6c-ncf" id="DDV-6C-Mw6"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="90o-Ph-G2N" id="YGv-7H-NiE"/>
+                            <outlet property="delegate" destination="90o-Ph-G2N" id="uO9-T8-Aej"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="60A-x4-WQC">
+                        <barButtonItem key="leftBarButtonItem" image="menu_icon.png" id="Uag-O0-w3N"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="sidebarButton" destination="Uag-O0-w3N" id="teS-1Z-hXY"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9SF-oR-sf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2514" y="-1970"/>
         </scene>
     </scenes>
     <resources>

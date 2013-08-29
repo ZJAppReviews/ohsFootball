@@ -19,7 +19,6 @@
 @synthesize playerData;
 @synthesize rosterType;
 
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -64,9 +63,6 @@
     self = [super initWithCoder:aCoder];
     if (self) {
         
-        
-        NSLog(self.restorationIdentifier);
-        
         if ([self.restorationIdentifier isEqualToString:@"varsityRosterTableView"]) {
             self.parseClassName = @"varsity_roster";
         }
@@ -74,9 +70,6 @@
         else if ([self.restorationIdentifier isEqualToString:@"freshmenRosterTableView"]) {
             self.parseClassName = @"freshmen_roster";
         }
-        
-        // The className to query on
-        //        self.parseClassName = @"varsity_roster";
         
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"Name";

@@ -17,6 +17,7 @@
 @implementation ScheduleViewController
 
 @synthesize teamData, scheduleData;
+@synthesize scheduleType;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,17 +33,7 @@
     [super viewDidLoad];
     
     // support side bar navigation
-    if ([self.restorationIdentifier isEqualToString:@"varsityScheduleTableView"]) {
-        self.title = @"Varsity Schedule";
-    }
-    
-    else if ([self.restorationIdentifier isEqualToString:@"freshmenScheduleTableView"]) {
-        self.title = @"JV Schedule";
-    }
-    
-    else if ([self.restorationIdentifier isEqualToString:@"freshmenScheduleTableView"]) {
-        self.title = @"Freshmen Schedule";
-    }
+    self.title = [NSString stringWithFormat:@"%@ Schedule", scheduleType];
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
@@ -55,7 +46,6 @@
     // Find out the path of team_info.plist
     NSString *path = [[NSBundle mainBundle] pathForResource:@"team_info" ofType:@"plist"];
     self.teamData = [NSMutableArray arrayWithContentsOfFile:path];
-    
     
 }
 
@@ -118,19 +108,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object
 {
-    static NSString *CellIdentifier = @"varsityScheduleCell";
-    
-    if ([self.restorationIdentifier isEqualToString:@"varsityScheduleTableView"]) {
-        CellIdentifier = @"varsityScheduleCell";
-    }
-    
-    else if ([self.restorationIdentifier isEqualToString:@"jvScheduleTableView"]) {
-        CellIdentifier = @"jvScheduleCell";
-    }
-    
-    else if ([self.restorationIdentifier isEqualToString:@"freshmenScheduleTableView"]) {
-        CellIdentifier = @"freshmenScheduleCell";
-    }
+    static NSString *CellIdentifier = @"ScheduleCell";
     
     ScheduleCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)
@@ -279,7 +257,7 @@
             teamScore01 = [object objectForKey:@"teamScore"];
         }
     }
-
+    
     cell.teamScore_01.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", teamScore01]];
     cell.teamScore_10.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", teamScore10]];
     cell.opponentScore_01.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", opponentScore01]];
