@@ -18,6 +18,7 @@
 
 @synthesize playerData;
 
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -29,26 +30,16 @@
 
 - (void)viewDidLoad
 {
-    
-    // custom tabs
-    UIImage *selectedImage0 = [UIImage imageNamed:@"Roster_Varsity_Active.png"];
-    UIImage *unselectedImage0 = [UIImage imageNamed:@"Roster_Varsity_Inactive.png"];
-    
-    UIImage *selectedImage1 = [UIImage imageNamed:@"Roster_Freshmen_Active.png"];
-    UIImage *unselectedImage1 = [UIImage imageNamed:@"Roster_Freshmen_Inactive.png"];
-    
-    UITabBar *tabBar = self.tabBarController.tabBar;
-    UITabBarItem *item0 = [tabBar.items objectAtIndex:0];
-    UITabBarItem *item1 = [tabBar.items objectAtIndex:1];
-    
-    [item0 setFinishedSelectedImage:selectedImage0 withFinishedUnselectedImage:unselectedImage0];
-    [item1 setFinishedSelectedImage:selectedImage1 withFinishedUnselectedImage:unselectedImage1];
-    
-    
     [super viewDidLoad];
     
     // support side bar navigation
-    self.title = @"Rosters";
+    if ([self.restorationIdentifier isEqualToString:@"varsityRosterTableView"]) {
+        self.title = @"Varsity Roster";
+    }
+    
+    else if ([self.restorationIdentifier isEqualToString:@"freshmenRosterTableView"]) {
+        self.title = @"Freshmen Roster";
+    }
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
@@ -131,9 +122,6 @@
     else if ([self.restorationIdentifier isEqualToString:@"freshmenRosterTableView"]) {
         CellIdentifier = @"freshmenRosterCell";
     }
-    
-    
-    
     
     RosterCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil)

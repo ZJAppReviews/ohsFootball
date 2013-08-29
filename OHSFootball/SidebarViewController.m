@@ -34,7 +34,9 @@
     self.tableView.backgroundColor = [UIColor whiteColor];
     //self.tableView.separatorColor = [UIColor grayColor];
     
-    _menuItems = @[@"title", @"rosters", @"schedules", @"picWeek", @"feedback", @"developerInfo", @"logIn"];
+    _menuItems = @[@"title", @"varsity_Roster", @"freshmen_Roster",
+                   @"varsity_schedule", @"jv_schedule", @"freshmen_schedule",
+                   @"picWeek", @"feedback", @"developerInfo", @"logIn"];
 
 }
 

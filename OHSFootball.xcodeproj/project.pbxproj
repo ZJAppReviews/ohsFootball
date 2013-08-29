@@ -21,6 +21,8 @@
 		2401EED017CC0A3D00C58BE5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EECF17CC0A3D00C58BE5 /* Parse.framework */; };
 		2401EED217CC0B6D00C58BE5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EED117CC0B6D00C58BE5 /* AudioToolbox.framework */; };
 		2401EED417CC0B7E00C58BE5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EED317CC0B7E00C58BE5 /* CFNetwork.framework */; };
+		244AFC9B17CE50D200273EF6 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 244AFC9A17CE50D200273EF6 /* ScheduleViewController.m */; };
+		244AFC9E17CE50E600273EF6 /* ScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 244AFC9D17CE50E600273EF6 /* ScheduleCell.m */; };
 		24725FE317CD4204007DB005 /* team_info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24CB8D3F17CD205C00F49A31 /* team_info.plist */; };
 		24725FE617CD448F007DB005 /* default_picture_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 24725FE417CD448F007DB005 /* default_picture_left.png */; };
 		24725FE717CD448F007DB005 /* default_picture_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 24725FE517CD448F007DB005 /* default_picture_right.png */; };
@@ -134,6 +136,10 @@
 		2401EECF17CC0A3D00C58BE5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		2401EED117CC0B6D00C58BE5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2401EED317CC0B7E00C58BE5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		244AFC9917CE50D200273EF6 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
+		244AFC9A17CE50D200273EF6 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
+		244AFC9C17CE50E600273EF6 /* ScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleCell.h; sourceTree = "<group>"; };
+		244AFC9D17CE50E600273EF6 /* ScheduleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleCell.m; sourceTree = "<group>"; };
 		24725FE417CD448F007DB005 /* default_picture_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_picture_left.png; sourceTree = "<group>"; };
 		24725FE517CD448F007DB005 /* default_picture_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default_picture_right.png; sourceTree = "<group>"; };
 		24725FE817CD4EAD007DB005 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -302,15 +308,11 @@
 				2401EEBB17CC0A1800C58BE5 /* AppDelegate.h */,
 				2401EEBC17CC0A1800C58BE5 /* AppDelegate.m */,
 				2401EEC417CC0A1800C58BE5 /* MainStoryboard.storyboard */,
-				24813A2A17CDB94D00DAD46F /* SidebarViewController.h */,
-				24813A2B17CDB94D00DAD46F /* SidebarViewController.m */,
-				24813A0217CDACEA00DAD46F /* MainViewController.h */,
-				24813A0317CDACEA00DAD46F /* MainViewController.m */,
-				2401EEC717CC0A1800C58BE5 /* ViewController.h */,
-				2401EEC817CC0A1800C58BE5 /* ViewController.m */,
+				244AFC9F17CE50EC00273EF6 /* Schedules */,
+				24B4914E17CC14C1007E85CE /* Rosters */,
+				244AFC9817CE4E9E00273EF6 /* Controll View Controllers */,
 				24725FEB17CD4EB4007DB005 /* Library */,
 				2401EEB317CC0A1800C58BE5 /* Supporting Files */,
-				24B4914E17CC14C1007E85CE /* Rosters */,
 			);
 			path = OHSFootball;
 			sourceTree = "<group>";
@@ -327,6 +329,30 @@
 				2401EEC217CC0A1800C58BE5 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		244AFC9817CE4E9E00273EF6 /* Controll View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				24813A2A17CDB94D00DAD46F /* SidebarViewController.h */,
+				24813A2B17CDB94D00DAD46F /* SidebarViewController.m */,
+				24813A0217CDACEA00DAD46F /* MainViewController.h */,
+				24813A0317CDACEA00DAD46F /* MainViewController.m */,
+				2401EEC717CC0A1800C58BE5 /* ViewController.h */,
+				2401EEC817CC0A1800C58BE5 /* ViewController.m */,
+			);
+			name = "Controll View Controllers";
+			sourceTree = "<group>";
+		};
+		244AFC9F17CE50EC00273EF6 /* Schedules */ = {
+			isa = PBXGroup;
+			children = (
+				244AFC9C17CE50E600273EF6 /* ScheduleCell.h */,
+				244AFC9D17CE50E600273EF6 /* ScheduleCell.m */,
+				244AFC9917CE50D200273EF6 /* ScheduleViewController.h */,
+				244AFC9A17CE50D200273EF6 /* ScheduleViewController.m */,
+			);
+			name = Schedules;
 			sourceTree = "<group>";
 		};
 		24725FEB17CD4EB4007DB005 /* Library */ = {
@@ -657,6 +683,8 @@
 				24B491E517CC7BC6007E85CE /* RosterCell.m in Sources */,
 				24813A0417CDACEA00DAD46F /* MainViewController.m in Sources */,
 				2401EEC917CC0A1800C58BE5 /* ViewController.m in Sources */,
+				244AFC9B17CE50D200273EF6 /* ScheduleViewController.m in Sources */,
+				244AFC9E17CE50E600273EF6 /* ScheduleCell.m in Sources */,
 				24725FEA17CD4EAD007DB005 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
