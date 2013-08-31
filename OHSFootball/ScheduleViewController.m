@@ -134,20 +134,13 @@
     cell.opponentTeamName.textAlignment = NSTextAlignmentLeft;
     
     // ----------------------------------------------------------------------------------------------------
-    //      Game Time
+    //      Game Date & Time
     // ----------------------------------------------------------------------------------------------------
-    cell.gameTime.text = [object objectForKey:@"gameTime"];
-    [cell.gameTime setFont:[UIFont fontWithName:@"Roboto" size:16]];
-    cell.gameTime.textColor = [UIColor blackColor];
-    cell.gameTime.textAlignment = NSTextAlignmentCenter;
     
-    // ----------------------------------------------------------------------------------------------------
-    //      Game Date
-    // ----------------------------------------------------------------------------------------------------
-    cell.gameDate.text = [object objectForKey:@"gameDate"];
-    [cell.gameDate setFont:[UIFont fontWithName:@"Roboto" size:16]];
-    cell.gameDate.textColor = [UIColor blackColor];
-    cell.gameDate.textAlignment = NSTextAlignmentCenter;
+    cell.gameDateTime.text = [NSString stringWithFormat:@"%@ - %@", [object objectForKey:@"gameDate"], [object objectForKey:@"gameTime"]];
+    [cell.gameDateTime setFont:[UIFont fontWithName:@"Roboto" size:14]];
+    cell.gameDateTime.textColor = [UIColor whiteColor];
+    cell.gameDateTime.textAlignment = NSTextAlignmentLeft;
     
     // ----------------------------------------------------------------------------------------------------
     //      Home or Away Indicator
@@ -175,8 +168,8 @@
     CGColorSpaceRef colorspace = CGColorSpaceCreateDeviceRGB();
     
     // set gradient 'anchor' points
-    size_t gradientNumberOfLocations = 2;
-    CGFloat gradientLocations[2] = { 0.0, 1.0 };
+    size_t gradientNumberOfLocations = 4;
+    CGFloat gradientLocations[4] = { 0.0, 0.7, 0.8, 1.0 };
     
     // Team Gradient
     // left color
@@ -192,7 +185,8 @@
     CGFloat Ra = 1.0f;
     
     
-    CGFloat teamGradientComponents[8] = { Lr, Lg, Lb, La, Rr, Rg, Rb, Ra};
+    //CGFloat teamGradientComponents[8] = { Lr, Lg, Lb, La, Rr, Rg, Rb, Ra};
+    CGFloat teamGradientComponents[16] = { Lr, Lg, Lb, La, Rr, Rg, Rb, Ra, Rr, Rg, Rb, 0.5, 0.5, 0.5, 0.5, 0.5};
     CGGradientRef teamGradient = CGGradientCreateWithColorComponents (colorspace, teamGradientComponents, gradientLocations, gradientNumberOfLocations);
     CGContextDrawLinearGradient(context, teamGradient, CGPointMake(0, 0.5), CGPointMake(size.width, size.height), 0);
     
@@ -213,7 +207,8 @@
     Rb = [[object objectForKey:@"opponent_lightB"] floatValue]/255.0;
     Ra = 1.0f;
     
-    CGFloat opponentGradientComponents[8] = { Lr, Lg, Lb, La, Rr, Rg, Rb, Ra};
+    //CGFloat opponentGradientComponents[8] = { Lr, Lg, Lb, La, Rr, Rg, Rb, Ra};
+    CGFloat opponentGradientComponents[16] = { Lr, Lg, Lb, La, Rr, Rg, Rb, Ra, Rr, Rg, Rb, 0.5, 0.5, 0.5, 0.5, 0.5};
     CGGradientRef opponentGradient = CGGradientCreateWithColorComponents (colorspace, opponentGradientComponents, gradientLocations, gradientNumberOfLocations);
     CGContextDrawLinearGradient(context, opponentGradient, CGPointMake(0, 0.5), CGPointMake(size.width, size.height), 0);
     
@@ -224,43 +219,38 @@
     // ----------------------------------------------------------------------------------------------------
     //      Game Scores
     // ----------------------------------------------------------------------------------------------------
-    // set scores to zero as defualt
-    NSString *opponentScore01 = @"0";
-    NSString *opponentScore10 = @"0";
+    cell.opponentScoreLabel.text = [object objectForKey:@"opponentScore"];
+    [cell.opponentScoreLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
+    cell.opponentScoreLabel.textColor = [UIColor whiteColor];
+    cell.opponentScoreLabel.textAlignment = NSTextAlignmentRight;
     
-    NSString *teamScore01 = @"0";
-    NSString *teamScore10 = @"0";
+    cell.teamScoreLabel.text = [object objectForKey:@"teamScore"];
+    [cell.teamScoreLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
+    cell.teamScoreLabel.textColor = [UIColor whiteColor];
+    cell.teamScoreLabel.textAlignment = NSTextAlignmentRight;
     
-    // Adjust Away Score
-    if ([[object objectForKey:@"opponentScore"]intValue] > 0) {
+    
+    // ----------------------------------------------------------------------------------------------------
+    //      Game Winner Icon
+    // ----------------------------------------------------------------------------------------------------
+    
+    cell.teamWinIndicator.image = [UIImage imageNamed:@"blank_icon.png"];
+    cell.opponentWinIndicator.image = [UIImage imageNamed:@"blank_icon.png"];
+    
+    NSString *teamScore = [object objectForKey:@"teamScore"];
+    NSString *opponentScore = [object objectForKey:@"opponentScore"];
+    
+    if (teamScore.intValue > opponentScore.intValue) {
+        cell.teamWinIndicator.image = [UIImage imageNamed:@"win_icon.png"];
+        [cell.teamName setFont:[UIFont fontWithName:@"Roboto-Medium" size:19]];
+        [cell.teamScoreLabel setFont:[UIFont fontWithName:@"Roboto-Medium" size:19]];
         
-        // if greater than 9
-        if ([[object objectForKey:@"opponentScore"]intValue] > 9) {
-            opponentScore01 = [[object objectForKey:@"opponentScore"] substringFromIndex:1];
-            opponentScore10 = [[object objectForKey:@"opponentScore"] substringToIndex:1];
-        }
-        else {
-            opponentScore01 = [object objectForKey:@"opponentScore"];
-        }
     }
-    
-    // Adjust Home Score
-    if ([[object objectForKey:@"teamScore"]intValue] > 9) {
-        
-        // if greater than 9
-        if ([[object objectForKey:@"teamScore"]intValue] > 9) {
-            teamScore01 = [[object objectForKey:@"teamScore"] substringFromIndex:1];
-            teamScore10 = [[object objectForKey:@"teamScore"] substringToIndex:1];
-        }
-        else {
-            teamScore01 = [object objectForKey:@"teamScore"];
-        }
+    else if (teamScore.intValue < opponentScore.intValue){
+        cell.opponentWinIndicator.image = [UIImage imageNamed:@"win_icon.png"];
+        [cell.opponentTeamName setFont:[UIFont fontWithName:@"Roboto-Medium" size:19]];
+        [cell.opponentScoreLabel setFont:[UIFont fontWithName:@"Roboto-Medium" size:19]];
     }
-    
-    cell.teamScore_01.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", teamScore01]];
-    cell.teamScore_10.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", teamScore10]];
-    cell.opponentScore_01.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", opponentScore01]];
-    cell.opponentScore_10.image = [UIImage imageNamed:[NSString stringWithFormat:@"scoreNumbers_%@.png", opponentScore10]];
     
     // ----------------------------------------------------------------------------------------------------
     //      Turn Off Selection Highlighting for rows
@@ -270,10 +260,9 @@
     // ----------------------------------------------------------------------------------------------------
     //      Show Table Row Separators
     // ----------------------------------------------------------------------------------------------------
-    tableView.separatorColor = [UIColor grayColor];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
+    tableView.separatorColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor colorWithRed:119.0f/255.0f green:119.0f/255.0f blue:119.0f/255.0f alpha:1.0f];
+
     return cell;
 }
 
@@ -287,7 +276,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // height of cell
-    return 110;
+    return 105;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object

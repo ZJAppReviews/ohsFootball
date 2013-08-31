@@ -16,8 +16,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *gradeLabel;
 @property (nonatomic, strong) IBOutlet UILabel *positionLabel;
 
-@property (nonatomic, strong) IBOutlet UIImageView *letterWinnerIconImageView;
-@property (nonatomic, strong) IBOutlet UIImageView *captainIconImageView;
+@property (nonatomic, strong) IBOutlet UILabel *accoladeLabel;
 
 @property (nonatomic, strong) IBOutlet UILabel *heightLabel;
 @property (nonatomic, strong) IBOutlet UILabel *weightLabel;

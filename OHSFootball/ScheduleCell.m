@@ -10,10 +10,12 @@
 
 @implementation ScheduleCell
 
-@synthesize teamName, opponentTeamName, gameDate, gameTime;
-@synthesize homeGameIndicator, teamGradient, opponentGradient;
+@synthesize teamName, opponentTeamName;
+@synthesize homeGameIndicator, teamWinIndicator, opponentWinIndicator;
 @synthesize teamScore, opponentScore;
-@synthesize teamScore_01, teamScore_10, opponentScore_01, opponentScore_10;
+@synthesize teamScoreLabel, opponentScoreLabel;
+@synthesize teamGradient, opponentGradient;
+@synthesize gameDateTime;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

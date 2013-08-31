@@ -198,6 +198,9 @@
     UIImage *gradient01 = UIGraphicsGetImageFromCurrentImageContext();
     cell.rowGradient.image = gradient01;
     
+    tableView.separatorColor = [UIColor clearColor];
+    
+
     
     return cell;
 }

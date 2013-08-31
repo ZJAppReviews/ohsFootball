@@ -193,30 +193,26 @@
     
     
     // ----------------------------------------------------------------------------------------------------
-    //      Captain Icon
+    //      Accolade Labels
     // ----------------------------------------------------------------------------------------------------
     NSString *capStatus = [object objectForKey:@"Captain"];
-    
-    if ([capStatus boolValue]) {
-        cell.captainIconImageView.image = [UIImage imageNamed:@"captain_icon.png"];
-    }
-    else{
-        
-        cell.captainIconImageView.image = [UIImage imageNamed:@"blank_pixel.png"];
-    }
-    
-    // ----------------------------------------------------------------------------------------------------
-    //      Varsity Icon
-    // ----------------------------------------------------------------------------------------------------
     NSString *letterStatus = [object objectForKey:@"LetterWinner"];
     
-    if ([letterStatus boolValue]) {
-        cell.letterWinnerIconImageView.image = [UIImage imageNamed:@"letterWinner_icon.png"];
+    
+    if ([capStatus boolValue] && [letterStatus boolValue]) {
+        cell.accoladeLabel.text = @"(C)Letter Winner";
+    } else if ([letterStatus boolValue] && ![capStatus boolValue]) {
+        cell.accoladeLabel.text = @"Letter Winner";
+    } else {
+        cell.accoladeLabel.text = @"";
     }
-    else{
-        
-        cell.letterWinnerIconImageView.image = [UIImage imageNamed:@"blank_pixel.png"];
-    }
+    
+    
+    [cell.accoladeLabel setFont:[UIFont fontWithName:@"Roboto" size:14]];
+    cell.accoladeLabel.textColor = [UIColor whiteColor];
+    cell.accoladeLabel.textAlignment = NSTextAlignmentCenter;
+    
+    
     
     // ----------------------------------------------------------------------------------------------------
     //      Thumbnail Image
@@ -272,11 +268,8 @@
     // ----------------------------------------------------------------------------------------------------
     //      Show Table Row Separators
     // ----------------------------------------------------------------------------------------------------
-    tableView.separatorColor = [UIColor grayColor];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    
+    tableView.separatorColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor colorWithRed:119.0f/255.0f green:119.0f/255.0f blue:119.0f/255.0f alpha:1.0f];
     
     return cell;
 }
