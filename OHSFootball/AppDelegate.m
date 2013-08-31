@@ -19,6 +19,10 @@
     [Parse setApplicationId:@"mfKRX5zztO2keKSDHEIwNuWgrOXeKvpHe849wJRA"
                   clientKey:@"LehOgGODBcVSgn93tlx3bbhDum9fMjPeMKxCvAWs"];
 
+    // twitter app login keys
+    [PFTwitterUtils initializeWithConsumerKey:@"TWqdHWnRrwIJokUc1OCpjg"
+                               consumerSecret:@"fJF56PfDly2KQV988k6hSmqqYK40wqOrBRWiMkQ"];
+
     // track analytics about app opens
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
         

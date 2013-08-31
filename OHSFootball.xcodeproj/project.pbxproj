@@ -18,6 +18,7 @@
 		2401EED017CC0A3D00C58BE5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EECF17CC0A3D00C58BE5 /* Parse.framework */; };
 		2401EED217CC0B6D00C58BE5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EED117CC0B6D00C58BE5 /* AudioToolbox.framework */; };
 		2401EED417CC0B7E00C58BE5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EED317CC0B7E00C58BE5 /* CFNetwork.framework */; };
+		2406875117D1A63F0028F8EA /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2406875017D1A63F0028F8EA /* LogInViewController.m */; };
 		24089C0E17CFAEE200FA9598 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24089C0B17CFAEE200FA9598 /* Default-568h@2x.png */; };
 		24089C0F17CFAEE200FA9598 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 24089C0C17CFAEE200FA9598 /* Default.png */; };
 		24089C1017CFAEE200FA9598 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24089C0D17CFAEE200FA9598 /* Default@2x.png */; };
@@ -122,6 +123,8 @@
 		2401EECF17CC0A3D00C58BE5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		2401EED117CC0B6D00C58BE5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2401EED317CC0B7E00C58BE5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2406874F17D1A63F0028F8EA /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		2406875017D1A63F0028F8EA /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		24089C0B17CFAEE200FA9598 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		24089C0C17CFAEE200FA9598 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		24089C0D17CFAEE200FA9598 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -323,6 +326,8 @@
 				248ED15D17CEE90E00CAE0C9 /* SideBar Controller */,
 				24813A0217CDACEA00DAD46F /* MainViewController.h */,
 				24813A0317CDACEA00DAD46F /* MainViewController.m */,
+				2406874F17D1A63F0028F8EA /* LogInViewController.h */,
+				2406875017D1A63F0028F8EA /* LogInViewController.m */,
 				2401EEC717CC0A1800C58BE5 /* ViewController.h */,
 				2401EEC817CC0A1800C58BE5 /* ViewController.m */,
 			);
@@ -630,6 +635,7 @@
 				24813A0417CDACEA00DAD46F /* MainViewController.m in Sources */,
 				2401EEC917CC0A1800C58BE5 /* ViewController.m in Sources */,
 				244AFC9B17CE50D200273EF6 /* ScheduleViewController.m in Sources */,
+				2406875117D1A63F0028F8EA /* LogInViewController.m in Sources */,
 				248ED15C17CEE89F00CAE0C9 /* SideBarCell.m in Sources */,
 				244AFC9E17CE50E600273EF6 /* ScheduleCell.m in Sources */,
 				24725FEA17CD4EAD007DB005 /* SWRevealViewController.m in Sources */,

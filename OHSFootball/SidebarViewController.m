@@ -16,7 +16,7 @@
 @interface SidebarViewController ()
 
 @property (nonatomic, strong) NSArray *menuItems;
-@property (nonatomic, strong) NSArray *menuItemPrettyName;
+@property (nonatomic, strong) NSArray *menuItemPrettyNames;
 @property (nonatomic, strong) NSArray *menuItemThumbnailImageName;
 
 @end
@@ -40,15 +40,14 @@
     
     self.view.backgroundColor = [UIColor blackColor];
     self.tableView.backgroundColor = [UIColor whiteColor];
-    //self.tableView.separatorColor = [UIColor grayColor];
-    
+
     _menuItems = @[@"title", @"varsity_Roster", @"freshmen_Roster",
                    @"varsity_schedule", @"jv_schedule", @"freshmen_schedule",
                    @"picWeek", @"feedback", @"developerInfo", @"logIn"];
-    
-    _menuItemPrettyName = @[@"title", @"Varsity Roster", @"Freshmen Roster",
-                            @"Varsity Schedule", @"JV Schedule", @"Freshmen Schedule",
-                            @"Picture of the Week", @"Feedback", @"Developer Info", @"Log In"];
+
+    _menuItemPrettyNames = @[@"title", @"Varsity Roster", @"Freshmen Roster",
+                             @"Varsity Schedule", @"JV Schedule", @"Freshmen Schedule",
+                             @"Picture of the Week", @"Feedback", @"Developer Info", @"Account"];
     
     _menuItemThumbnailImageName = @[@"title", @"varsity_roster",
                                     @"freshmen_roster",
@@ -125,8 +124,6 @@
     
 }
 
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -150,15 +147,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
-    
-    
-    
     SideBarCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // ----------------------------------------------------------------------------------------------------
     //      Label
     // ----------------------------------------------------------------------------------------------------
-    cell.rowLabel.text = [self.menuItemPrettyName objectAtIndex:indexPath.row];
+    cell.rowLabel.text = [self.menuItemPrettyNames objectAtIndex:indexPath.row];
     [cell.rowLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
     cell.rowLabel.textColor = [UIColor whiteColor];
     

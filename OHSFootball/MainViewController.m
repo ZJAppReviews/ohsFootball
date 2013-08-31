@@ -15,19 +15,34 @@
 
 @implementation MainViewController
 
+@synthesize userNameLabel;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.title = @"User Log In";
-
+    self.title = @"Main View";
+    
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    
+    // set label
+    
+    if (![PFUser currentUser]) {
+        userNameLabel.text = [NSString stringWithFormat:@"Not Signed In"];
+    } else {
+        
+        userNameLabel.text = [NSString stringWithFormat:@"Current User is:\n\n%@", [PFUser currentUser].username];
+    }
+    [userNameLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
+    [userNameLabel setTextAlignment:NSTextAlignmentCenter];
+    userNameLabel.textColor = [UIColor blackColor];
+    
 }
 
 - (void)didReceiveMemoryWarning

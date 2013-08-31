@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface SidebarViewController : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray *teamData;
 
 @end
+
