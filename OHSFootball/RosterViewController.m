@@ -113,11 +113,13 @@
     
     // Configure the cell...
     
+
+    
     // ----------------------------------------------------------------------------------------------------
     //      Player Name
     // ----------------------------------------------------------------------------------------------------
     cell.nameLabel.text = [object objectForKey:@"Name"];
-    [cell.nameLabel setFont:[UIFont fontWithName:@"Roboto" size:19]];
+    [cell.nameLabel setFont:[UIFont fontWithName:@"Roboto-Medium" size:19]];
     cell.nameLabel.textColor = [UIColor whiteColor];
     cell.nameLabel.textAlignment = NSTextAlignmentCenter;
     
@@ -126,7 +128,7 @@
     // ----------------------------------------------------------------------------------------------------
     cell.numberLabel.text = [object objectForKey:@"Number"];
     [cell.numberLabel setFont:[UIFont fontWithName:@"Roboto" size:19]];
-    cell.numberLabel.textColor = [UIColor blackColor];
+    cell.numberLabel.textColor = [UIColor whiteColor];
     cell.numberLabel.textAlignment = NSTextAlignmentCenter;
     
     // ----------------------------------------------------------------------------------------------------
@@ -134,7 +136,7 @@
     // ----------------------------------------------------------------------------------------------------
     cell.positionLabel.text = [object objectForKey:@"Position"];
     [cell.positionLabel setFont:[UIFont fontWithName:@"Roboto" size:14]];
-    cell.positionLabel.textColor = [UIColor blackColor];
+    cell.positionLabel.textColor = [UIColor whiteColor];
     cell.positionLabel.textAlignment = NSTextAlignmentCenter;
     
     // ----------------------------------------------------------------------------------------------------
@@ -157,7 +159,7 @@
     
     cell.gradeLabel.text = grade;
     [cell.gradeLabel setFont:[UIFont fontWithName:@"Roboto" size:14]];
-    cell.gradeLabel.textColor = [UIColor blackColor];
+    cell.gradeLabel.textColor = [UIColor whiteColor];
     cell.gradeLabel.textAlignment = NSTextAlignmentCenter;
     
     // ----------------------------------------------------------------------------------------------------
@@ -172,7 +174,7 @@
     
     cell.heightLabel.text = [NSString stringWithFormat:@"%d'%d\"" , feet, inches];
     [cell.heightLabel setFont:[UIFont fontWithName:@"Roboto" size:14]];
-    cell.heightLabel.textColor = [UIColor blackColor];
+    cell.heightLabel.textColor = [UIColor whiteColor];
     cell.heightLabel.textAlignment = NSTextAlignmentCenter;
     
     // ----------------------------------------------------------------------------------------------------
@@ -180,7 +182,7 @@
     // ----------------------------------------------------------------------------------------------------
     cell.weightLabel.text = [NSString stringWithFormat:@"%@ lbs", [object objectForKey:@"Weight"]];
     [cell.weightLabel setFont:[UIFont fontWithName:@"Roboto" size:14]];
-    cell.weightLabel.textColor = [UIColor blackColor];
+    cell.weightLabel.textColor = [UIColor whiteColor];
     cell.weightLabel.textAlignment = NSTextAlignmentCenter;
     
     // ----------------------------------------------------------------------------------------------------
@@ -191,28 +193,30 @@
     cell.numberLabel.textColor = [UIColor whiteColor];
     cell.numberLabel.textAlignment = NSTextAlignmentCenter;
     
-    
     // ----------------------------------------------------------------------------------------------------
     //      Accolade Labels
     // ----------------------------------------------------------------------------------------------------
     NSString *capStatus = [object objectForKey:@"Captain"];
     NSString *letterStatus = [object objectForKey:@"LetterWinner"];
     
+    cell.captainLabel.text = @"";
+    cell.letterWinnerLabel.text = @"";
     
-    if ([capStatus boolValue] && [letterStatus boolValue]) {
-        cell.accoladeLabel.text = @"(C)Letter Winner";
-    } else if ([letterStatus boolValue] && ![capStatus boolValue]) {
-        cell.accoladeLabel.text = @"Letter Winner";
-    } else {
-        cell.accoladeLabel.text = @"";
+    if ([capStatus boolValue]) {
+        cell.captainLabel.text = @"Captain";
     }
     
+    if ([letterStatus boolValue]) {
+        cell.letterWinnerLabel.text = @"Letter Winner";
+    }
     
-    [cell.accoladeLabel setFont:[UIFont fontWithName:@"Roboto" size:14]];
-    cell.accoladeLabel.textColor = [UIColor whiteColor];
-    cell.accoladeLabel.textAlignment = NSTextAlignmentCenter;
+    [cell.captainLabel setFont:[UIFont fontWithName:@"Roboto" size:14]];
+    cell.captainLabel.textColor = [UIColor whiteColor];
+    cell.captainLabel.textAlignment = NSTextAlignmentCenter;
     
-    
+    [cell.letterWinnerLabel setFont:[UIFont fontWithName:@"Roboto" size:14]];
+    cell.letterWinnerLabel.textColor = [UIColor whiteColor];
+    cell.letterWinnerLabel.textAlignment = NSTextAlignmentCenter;
     
     // ----------------------------------------------------------------------------------------------------
     //      Thumbnail Image

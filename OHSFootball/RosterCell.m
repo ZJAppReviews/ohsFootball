@@ -10,7 +10,7 @@
 
 @implementation RosterCell
 
-@synthesize nameLabel, numberLabel, gradeLabel, positionLabel, heightLabel, weightLabel, accoladeLabel;
+@synthesize nameLabel, numberLabel, gradeLabel, positionLabel, heightLabel, weightLabel, captainLabel, letterWinnerLabel;
 @synthesize teamGradient, thumbnailImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
