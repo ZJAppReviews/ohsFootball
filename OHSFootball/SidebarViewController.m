@@ -160,7 +160,7 @@
     // ----------------------------------------------------------------------------------------------------
     cell.teamLabel.text = [self.menuItemTeamLabel objectAtIndex:indexPath.row];
     [cell.teamLabel setFont:[UIFont fontWithName:@"JerseyLetters" size:20]];
-    cell.teamLabel.textColor = [UIColor blackColor];
+    cell.teamLabel.textColor = [UIColor whiteColor];
     cell.teamLabel.textAlignment = NSTextAlignmentCenter;
     
     // ----------------------------------------------------------------------------------------------------

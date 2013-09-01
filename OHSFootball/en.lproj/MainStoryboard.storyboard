@@ -1023,27 +1023,10 @@
     </scenes>
     <resources>
         <image name="binding_dark.png" width="310" height="95"/>
-        <image name="binding_dark.png" width="310" height="95"/>
-        <image name="binding_dark.png" width="310" height="95"/>
-        <image name="calendar_icon.png" width="200" height="200"/>
-        <image name="calendar_icon.png" width="200" height="200"/>
         <image name="calendar_icon.png" width="200" height="200"/>
         <image name="grey_wash_wall.png" width="350" height="259"/>
-        <image name="grey_wash_wall.png" width="350" height="259"/>
-        <image name="grey_wash_wall.png" width="350" height="259"/>
-        <image name="grey_wash_wall.png" width="350" height="259"/>
-        <image name="grey_wash_wall.png" width="350" height="259"/>
-        <image name="menu_icon.png" width="28" height="20"/>
-        <image name="menu_icon.png" width="28" height="20"/>
-        <image name="menu_icon.png" width="28" height="20"/>
-        <image name="menu_icon.png" width="28" height="20"/>
-        <image name="menu_icon.png" width="28" height="20"/>
-        <image name="menu_icon.png" width="28" height="20"/>
         <image name="menu_icon.png" width="28" height="20"/>
         <image name="roster_icon.png" width="200" height="200"/>
-        <image name="roster_icon.png" width="200" height="200"/>
-        <image name="win_icon.png" width="60" height="95"/>
-        <image name="win_icon.png" width="60" height="95"/>
         <image name="win_icon.png" width="60" height="95"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
