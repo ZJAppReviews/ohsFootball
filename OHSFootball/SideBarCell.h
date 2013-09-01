@@ -11,6 +11,7 @@
 @interface SideBarCell : UITableViewCell
 
 @property (nonatomic, strong) IBOutlet UILabel *rowLabel;
+@property (nonatomic, strong) IBOutlet UILabel *teamLabel;
 
 @property (nonatomic, strong) IBOutlet UIImageView *rowThumbnail;
 @property (nonatomic, strong) IBOutlet UIImageView *rowGradient;

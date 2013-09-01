@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSArray *menuItems;
 @property (nonatomic, strong) NSArray *menuItemPrettyNames;
 @property (nonatomic, strong) NSArray *menuItemThumbnailImageName;
+@property (nonatomic, strong) NSArray *menuItemTeamLabel;
 
 @end
 
@@ -49,15 +50,13 @@
                              @"Varsity Schedule", @"JV Schedule", @"Freshmen Schedule",
                              @"Picture of the Week", @"Feedback", @"Developer Info", @"Account"];
     
-    _menuItemThumbnailImageName = @[@"title", @"varsity_roster",
-                                    @"freshmen_roster",
-                                    @"varsity_schedule",
-                                    @"jv_schedule",
-                                    @"freshmen_schedule",
-                                    @"polaroid",
-                                    @"bullhorn",
-                                    @"gear",
-                                    @"lock"];
+    _menuItemThumbnailImageName = @[@"title", @"roster", @"roster",
+                                    @"calendar", @"calendar", @"calendar",
+                                    @"polaroid", @"bullhorn", @"gear", @"lock"];
+    
+    _menuItemTeamLabel = @[@"", @"V", @"F",
+                                    @"V", @"JV", @"F",
+                                    @"", @"", @"", @""];
     
     // Find out the path of team_info.plist
     NSString *path = [[NSBundle mainBundle] pathForResource:@"team_info" ofType:@"plist"];
@@ -155,6 +154,14 @@
     cell.rowLabel.text = [self.menuItemPrettyNames objectAtIndex:indexPath.row];
     [cell.rowLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
     cell.rowLabel.textColor = [UIColor whiteColor];
+    
+    // ----------------------------------------------------------------------------------------------------
+    //      Team Label
+    // ----------------------------------------------------------------------------------------------------
+    cell.teamLabel.text = [self.menuItemTeamLabel objectAtIndex:indexPath.row];
+    [cell.teamLabel setFont:[UIFont fontWithName:@"JerseyLetters" size:20]];
+    cell.teamLabel.textColor = [UIColor blackColor];
+    cell.teamLabel.textAlignment = NSTextAlignmentCenter;
     
     // ----------------------------------------------------------------------------------------------------
     //      Thumbnail Image

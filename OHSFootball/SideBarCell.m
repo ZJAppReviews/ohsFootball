@@ -10,7 +10,7 @@
 
 @implementation SideBarCell
 
-@synthesize rowLabel;
+@synthesize rowLabel, teamLabel;
 @synthesize rowGradient, rowThumbnail;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
