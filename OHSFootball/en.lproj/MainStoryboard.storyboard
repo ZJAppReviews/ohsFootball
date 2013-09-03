@@ -785,6 +785,7 @@
                                     <outlet property="teamName" destination="9ef-j5-3zu" id="bNW-Bx-UKL"/>
                                     <outlet property="teamScoreLabel" destination="5XK-at-gmN" id="2kI-KG-m9v"/>
                                     <outlet property="teamWinIndicator" destination="NQ2-p1-TFO" id="53N-os-Ie3"/>
+                                    <segue destination="q2g-ja-JKo" kind="push" identifier="GameDetailSegue" id="zgl-wN-9yb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -802,7 +803,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="49g-au-2dS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1767" y="-1956"/>
+            <point key="canvasLocation" x="3267" y="-2376"/>
         </scene>
         <!--Schedule View Controller-->
         <scene sceneID="AXh-0R-SB1">
@@ -893,6 +894,7 @@
                                     <outlet property="teamName" destination="HFf-eq-1dB" id="cCJ-LP-isb"/>
                                     <outlet property="teamScoreLabel" destination="8rl-Z5-c24" id="0at-np-7SM"/>
                                     <outlet property="teamWinIndicator" destination="GMq-Ry-4m3" id="dgU-Hs-84S"/>
+                                    <segue destination="q2g-ja-JKo" kind="push" identifier="GameDetailSegue" id="oYw-KJ-k8H"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -910,7 +912,109 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7sf-Km-Lda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2139" y="-1956"/>
+            <point key="canvasLocation" x="3267" y="-1716"/>
+        </scene>
+        <!--Game Detail View Controller-->
+        <scene sceneID="7ak-mQ-dAG">
+            <objects>
+                <viewController id="q2g-ja-JKo" customClass="GameDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lHJ-1O-BWm"/>
+                        <viewControllerLayoutGuide type="bottom" id="v9J-kD-9gI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xZy-4c-z1v">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="grey_wash_wall.png" translatesAutoresizingMaskIntoConstraints="NO" id="XYX-s2-el9" userLabel="background - view">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="binding_dark.png" translatesAutoresizingMaskIntoConstraints="NO" id="xQM-vO-dqf" userLabel="background - scores">
+                                <rect key="frame" x="5" y="80" width="310" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32Z-Rm-fVC">
+                                <rect key="frame" x="8" y="83" width="304" height="94"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mascot 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7LW-Ag-0Bp">
+                                <rect key="frame" x="5" y="95" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mascot 2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geT-vg-YbI">
+                                <rect key="frame" x="195" y="95" width="120" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="##" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lju-Us-mPv">
+                                <rect key="frame" x="38" y="113" width="55" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="##" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rah-19-F4u">
+                                <rect key="frame" x="228" y="113" width="55" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nv8-Wx-oWR">
+                                <rect key="frame" x="40" y="180" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGt-ml-FfY">
+                                <rect key="frame" x="40" y="210" width="275" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="275" translatesAutoresizingMaskIntoConstraints="NO" id="pCu-85-ptn">
+                                <rect key="frame" x="40" y="240" width="275" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="calendar_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="0Ze-C0-GUj">
+                                <rect key="frame" x="10" y="185" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="3oO-5C-aDn">
+                                <rect key="frame" x="10" y="215" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signpost_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="REF-wZ-VTc">
+                                <rect key="frame" x="10" y="265" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TE6-JW-VzS">
+                                <rect key="frame" x="148" y="118" width="25" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ckk-TJ-vcW"/>
+                    <connections>
+                        <outlet property="gameDateLabel" destination="Nv8-Wx-oWR" id="aWp-Yf-gyF"/>
+                        <outlet property="gameLocationLabel" destination="pCu-85-ptn" id="UpV-xf-hn5"/>
+                        <outlet property="gameTimeLabel" destination="aGt-ml-FfY" id="NJK-tT-eJt"/>
+                        <outlet property="gradientImage" destination="32Z-Rm-fVC" id="tE3-3H-yzO"/>
+                        <outlet property="homeGameIndicatorImage" destination="TE6-JW-VzS" id="tt6-5Z-CoI"/>
+                        <outlet property="opponentMascotLabel" destination="geT-vg-YbI" id="3mP-rJ-cnX"/>
+                        <outlet property="opponentScoreLabel" destination="rah-19-F4u" id="hhx-AZ-qdh"/>
+                        <outlet property="teamMascotLabel" destination="7LW-Ag-0Bp" id="nLx-28-t3j"/>
+                        <outlet property="teamScoreLabel" destination="lju-Us-mPv" id="sg2-LY-TqP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0E-Y7-27i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3931" y="-1716"/>
         </scene>
         <!--Schedule View Controller-->
         <scene sceneID="Z2L-fo-5Cl">
@@ -1001,6 +1105,7 @@
                                     <outlet property="teamName" destination="qvf-Mf-Kig" id="ivI-gL-3SJ"/>
                                     <outlet property="teamScoreLabel" destination="MKC-d8-0W7" id="4fZ-W8-2MC"/>
                                     <outlet property="teamWinIndicator" destination="aQ1-ef-E9c" id="hxd-Bg-vTz"/>
+                                    <segue destination="q2g-ja-JKo" kind="push" identifier="GameDetailSegue" id="1g9-OS-ELb"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1018,15 +1123,37 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yA7-t5-nSf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2505" y="-1956"/>
+            <point key="canvasLocation" x="3267" y="-1061"/>
         </scene>
     </scenes>
     <resources>
         <image name="binding_dark.png" width="310" height="95"/>
+        <image name="binding_dark.png" width="310" height="95"/>
+        <image name="binding_dark.png" width="310" height="95"/>
+        <image name="binding_dark.png" width="310" height="95"/>
         <image name="calendar_icon.png" width="200" height="200"/>
+        <image name="calendar_icon.png" width="200" height="200"/>
+        <image name="calendar_icon.png" width="200" height="200"/>
+        <image name="calendar_icon.png" width="200" height="200"/>
+        <image name="clock_icon.png" width="200" height="200"/>
+        <image name="grey_wash_wall.png" width="350" height="259"/>
+        <image name="grey_wash_wall.png" width="350" height="259"/>
+        <image name="grey_wash_wall.png" width="350" height="259"/>
+        <image name="grey_wash_wall.png" width="350" height="259"/>
+        <image name="grey_wash_wall.png" width="350" height="259"/>
         <image name="grey_wash_wall.png" width="350" height="259"/>
         <image name="menu_icon.png" width="28" height="20"/>
+        <image name="menu_icon.png" width="28" height="20"/>
+        <image name="menu_icon.png" width="28" height="20"/>
+        <image name="menu_icon.png" width="28" height="20"/>
+        <image name="menu_icon.png" width="28" height="20"/>
+        <image name="menu_icon.png" width="28" height="20"/>
+        <image name="menu_icon.png" width="28" height="20"/>
         <image name="roster_icon.png" width="200" height="200"/>
+        <image name="roster_icon.png" width="200" height="200"/>
+        <image name="signpost_icon.png" width="200" height="200"/>
+        <image name="win_icon.png" width="60" height="95"/>
+        <image name="win_icon.png" width="60" height="95"/>
         <image name="win_icon.png" width="60" height="95"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -1035,6 +1162,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="1g9-OS-ELb"/>
         <segue reference="odr-MG-UcH"/>
     </inferredMetricsTieBreakers>
 </document>

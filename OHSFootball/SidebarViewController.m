@@ -52,7 +52,7 @@
     
     _menuItemThumbnailImageName = @[@"title", @"roster", @"roster",
                                     @"calendar", @"calendar", @"calendar",
-                                    @"polaroid", @"bullhorn", @"gear", @"lock"];
+                                    @"polaroid", @"bullhorn", @"gear", @"user"];
     
     _menuItemTeamLabel = @[@"", @"V", @"F",
                                     @"V", @"JV", @"F",

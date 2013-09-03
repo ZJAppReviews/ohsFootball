@@ -68,6 +68,7 @@
 		24813A0417CDACEA00DAD46F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24813A0317CDACEA00DAD46F /* MainViewController.m */; };
 		24813A2C17CDB94D00DAD46F /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24813A2B17CDB94D00DAD46F /* SidebarViewController.m */; };
 		248ED15C17CEE89F00CAE0C9 /* SideBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 248ED15B17CEE89F00CAE0C9 /* SideBarCell.m */; };
+		2491D9DB17D5866A0006E811 /* GameDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2491D9DA17D5866A0006E811 /* GameDetailViewController.m */; };
 		24B4913B17CC0BBC007E85CE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B4913A17CC0BBC007E85CE /* CoreLocation.framework */; };
 		24B4913D17CC0BC6007E85CE /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B4913C17CC0BC6007E85CE /* libz.1.1.3.dylib */; };
 		24B4913F17CC0BD2007E85CE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24B4913E17CC0BD2007E85CE /* MobileCoreServices.framework */; };
@@ -165,6 +166,8 @@
 		24813A2B17CDB94D00DAD46F /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		248ED15A17CEE89F00CAE0C9 /* SideBarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideBarCell.h; sourceTree = "<group>"; };
 		248ED15B17CEE89F00CAE0C9 /* SideBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SideBarCell.m; sourceTree = "<group>"; };
+		2491D9D917D5866A0006E811 /* GameDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDetailViewController.h; sourceTree = "<group>"; };
+		2491D9DA17D5866A0006E811 /* GameDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameDetailViewController.m; sourceTree = "<group>"; };
 		24B4913A17CC0BBC007E85CE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		24B4913C17CC0BC6007E85CE /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		24B4913E17CC0BD2007E85CE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -357,6 +360,8 @@
 				244AFC9D17CE50E600273EF6 /* ScheduleCell.m */,
 				244AFC9917CE50D200273EF6 /* ScheduleViewController.h */,
 				244AFC9A17CE50D200273EF6 /* ScheduleViewController.m */,
+				2491D9D917D5866A0006E811 /* GameDetailViewController.h */,
+				2491D9DA17D5866A0006E811 /* GameDetailViewController.m */,
 			);
 			name = Schedules;
 			sourceTree = "<group>";
@@ -578,6 +583,7 @@
 				24B491E517CC7BC6007E85CE /* RosterCell.m in Sources */,
 				24813A0417CDACEA00DAD46F /* MainViewController.m in Sources */,
 				2401EEC917CC0A1800C58BE5 /* ViewController.m in Sources */,
+				2491D9DB17D5866A0006E811 /* GameDetailViewController.m in Sources */,
 				244AFC9B17CE50D200273EF6 /* ScheduleViewController.m in Sources */,
 				2406875117D1A63F0028F8EA /* LogInViewController.m in Sources */,
 				248ED15C17CEE89F00CAE0C9 /* SideBarCell.m in Sources */,

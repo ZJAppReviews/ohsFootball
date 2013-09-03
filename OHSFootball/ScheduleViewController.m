@@ -9,6 +9,7 @@
 #import "ScheduleViewController.h"
 #import "ScheduleCell.h"
 #import "SWRevealViewController.h"
+#import "GameDetailViewController.h"
 
 @interface ScheduleViewController ()
 
@@ -262,7 +263,7 @@
     // ----------------------------------------------------------------------------------------------------
     tableView.separatorColor = [UIColor clearColor];
     self.view.backgroundColor = [UIColor colorWithRed:119.0f/255.0f green:119.0f/255.0f blue:119.0f/255.0f alpha:1.0f];
-
+    
     return cell;
 }
 
@@ -283,6 +284,111 @@
 {
     // make Blue highlight fade
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
+// ----------------------------------------------------------------------------------------------------
+//      Segue to Game Detail View
+// ----------------------------------------------------------------------------------------------------
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"GameDetailSegue"]) {
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PFObject *object = [self.objects objectAtIndex:indexPath.row];
+        
+        GameDetailViewController *destViewController = segue.destinationViewController;
+        
+        // ----------------------------------------------------------------------------------------------------
+        //      Team Names
+        // ----------------------------------------------------------------------------------------------------
+        destViewController.teamMascot = [self.teamData objectAtIndex:0][@"mascot"];
+        destViewController.opponentMascot = [object objectForKey:@"Mascot"];
+        
+        // ----------------------------------------------------------------------------------------------------
+        //      Game Time and Date
+        // ----------------------------------------------------------------------------------------------------
+        destViewController.gameTime = [object objectForKey:@"gameTime"];
+        destViewController.gameDate = [object objectForKey:@"gameDate"];
+        
+        // ----------------------------------------------------------------------------------------------------
+        //      Game Location
+        // ----------------------------------------------------------------------------------------------------
+        NSString *location = [NSString stringWithFormat:@"%@\n%@\n%@, %@ %@",[object objectForKey:@"gameLocationName"], [object objectForKey:@"gameAddressStreet"], [object objectForKey:@"gameAddressCity"], [object objectForKey:@"gameAddressState"],[object objectForKey:@"gameAddressZip"] ];
+        
+        destViewController.gameLocation = location;
+        
+        // ----------------------------------------------------------------------------------------------------
+        //      Team Gradients
+        // ----------------------------------------------------------------------------------------------------
+        
+        // Team Dark Color
+        CGFloat Tr = [[self.teamData objectAtIndex:0][@"gradient_darkR"] floatValue]/255.0;
+        CGFloat Tg = [[self.teamData objectAtIndex:0][@"gradient_darkG"] floatValue]/255.0;
+        CGFloat Tb = [[self.teamData objectAtIndex:0][@"gradient_darkB"] floatValue]/255.0;
+        destViewController.teamGradDarkR = Tr;
+        destViewController.teamGradDarkG = Tg;
+        destViewController.teamGradDarkB = Tb;
+        // Team Light Color
+        Tr = [[self.teamData objectAtIndex:0][@"gradient_lightR"] floatValue]/255.0;
+        Tg = [[self.teamData objectAtIndex:0][@"gradient_lightG"] floatValue]/255.0;
+        Tb = [[self.teamData objectAtIndex:0][@"gradient_lightB"] floatValue]/255.0;
+        destViewController.teamGradLightR = Tr;
+        destViewController.teamGradLightG = Tg;
+        destViewController.teamGradLightB = Tb;
+        
+        
+        // Opponent Dark Color
+        CGFloat Or = [[object objectForKey:@"opponent_darkR"] floatValue]/255.0;
+        CGFloat Og = [[object objectForKey:@"opponent_darkG"] floatValue]/255.0;
+        CGFloat Ob = [[object objectForKey:@"opponent_darkB"] floatValue]/255.0;
+        destViewController.opponentGradDarkR = Or;
+        destViewController.opponentGradDarkG = Og;
+        destViewController.opponentGradDarkB = Ob;
+
+        // Opponent Light Color
+        Or = [[object objectForKey:@"opponent_lightR"] floatValue]/255.0;
+        Og = [[object objectForKey:@"opponent_lightG"] floatValue]/255.0;
+        Ob = [[object objectForKey:@"opponent_lightB"] floatValue]/255.0;
+        destViewController.opponentGradLightR = Or;
+        destViewController.opponentGradLightG = Og;
+        destViewController.opponentGradLightB = Ob;
+        
+        // ----------------------------------------------------------------------------------------------------
+        //      Score
+        // ----------------------------------------------------------------------------------------------------
+        destViewController.teamScore = [object objectForKey:@"teamScore"];
+        destViewController.opponentScore = [object objectForKey:@"opponentScore"];
+        
+        // ----------------------------------------------------------------------------------------------------
+        //      Home or Away Indicator
+        // ----------------------------------------------------------------------------------------------------
+        NSString *homeStatus = [object objectForKey:@"Home"];
+        if ([homeStatus boolValue])
+        {
+            destViewController.homeGameIndicator = @"home_icon";
+        }
+        else
+        {
+            destViewController.homeGameIndicator = @"away_icon.png";
+        }
+        
+        
+        
+                
+        
+        
+        
+        
+        // ----------------------------------------------------------------------------------------------------
+        //      Location for Mapping
+        // ----------------------------------------------------------------------------------------------------
+        /*
+         destViewController.gameAddressForMap = [object objectForKey:@"gameAddress_forMap"];
+         */
+        
+    }
 }
 
 @end
