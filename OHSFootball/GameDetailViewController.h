@@ -38,6 +38,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *gameLocationLabel;
 @property (nonatomic, strong)   NSString *gameLocation;
 
+@property (nonatomic, strong) IBOutlet UILabel *reportScoresLabel;
+- (IBAction)reportScoresButtonPressed:(id)sender;
+
 @property (nonatomic) CGFloat teamGradDarkR;
 @property (nonatomic) CGFloat teamGradDarkG;
 @property (nonatomic) CGFloat teamGradDarkB;

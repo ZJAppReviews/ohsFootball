@@ -41,7 +41,7 @@
     }
     [userNameLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
     [userNameLabel setTextAlignment:NSTextAlignmentCenter];
-    userNameLabel.textColor = [UIColor blackColor];
+    userNameLabel.textColor = [UIColor whiteColor];
     
 }
 

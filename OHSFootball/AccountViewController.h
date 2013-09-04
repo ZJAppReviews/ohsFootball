@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface LogInViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface AccountViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 
@@ -17,6 +17,7 @@
 - (IBAction)logOut:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *currentUserLabel;
+@property (strong, nonatomic) IBOutlet UILabel *logOutButtonLabel;
 
 
 @end

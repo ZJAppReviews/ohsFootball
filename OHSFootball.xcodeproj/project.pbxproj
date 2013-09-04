@@ -18,7 +18,7 @@
 		2401EED017CC0A3D00C58BE5 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EECF17CC0A3D00C58BE5 /* Parse.framework */; };
 		2401EED217CC0B6D00C58BE5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EED117CC0B6D00C58BE5 /* AudioToolbox.framework */; };
 		2401EED417CC0B7E00C58BE5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2401EED317CC0B7E00C58BE5 /* CFNetwork.framework */; };
-		2406875117D1A63F0028F8EA /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2406875017D1A63F0028F8EA /* LogInViewController.m */; };
+		2406875117D1A63F0028F8EA /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2406875017D1A63F0028F8EA /* AccountViewController.m */; };
 		24089C0E17CFAEE200FA9598 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24089C0B17CFAEE200FA9598 /* Default-568h@2x.png */; };
 		24089C0F17CFAEE200FA9598 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 24089C0C17CFAEE200FA9598 /* Default.png */; };
 		24089C1017CFAEE200FA9598 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 24089C0D17CFAEE200FA9598 /* Default@2x.png */; };
@@ -59,6 +59,8 @@
 		2438082317D2EDDE00F92BD7 /* user_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 243807FE17D2EDDE00F92BD7 /* user_icon@2x.png */; };
 		2438082417D2EDDE00F92BD7 /* win_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 243807FF17D2EDDE00F92BD7 /* win_icon.png */; };
 		2438082517D2EDDE00F92BD7 /* win_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2438080017D2EDDE00F92BD7 /* win_icon@2x.png */; };
+		2440BA0217D68CFC00B9DB00 /* ScoreReportingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2440BA0117D68CFC00B9DB00 /* ScoreReportingViewController.m */; };
+		2440BA0717D6B02300B9DB00 /* DeveloperInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2440BA0617D6B02300B9DB00 /* DeveloperInfoViewController.m */; };
 		244AFC9B17CE50D200273EF6 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 244AFC9A17CE50D200273EF6 /* ScheduleViewController.m */; };
 		244AFC9E17CE50E600273EF6 /* ScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 244AFC9D17CE50E600273EF6 /* ScheduleCell.m */; };
 		24725FE317CD4204007DB005 /* team_info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 24CB8D3F17CD205C00F49A31 /* team_info.plist */; };
@@ -110,8 +112,8 @@
 		2401EECF17CC0A3D00C58BE5 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		2401EED117CC0B6D00C58BE5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2401EED317CC0B7E00C58BE5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		2406874F17D1A63F0028F8EA /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
-		2406875017D1A63F0028F8EA /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		2406874F17D1A63F0028F8EA /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		2406875017D1A63F0028F8EA /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		24089C0B17CFAEE200FA9598 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		24089C0C17CFAEE200FA9598 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		24089C0D17CFAEE200FA9598 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -152,6 +154,10 @@
 		243807FE17D2EDDE00F92BD7 /* user_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_icon@2x.png"; sourceTree = "<group>"; };
 		243807FF17D2EDDE00F92BD7 /* win_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = win_icon.png; sourceTree = "<group>"; };
 		2438080017D2EDDE00F92BD7 /* win_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "win_icon@2x.png"; sourceTree = "<group>"; };
+		2440BA0017D68CFC00B9DB00 /* ScoreReportingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoreReportingViewController.h; sourceTree = "<group>"; };
+		2440BA0117D68CFC00B9DB00 /* ScoreReportingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScoreReportingViewController.m; sourceTree = "<group>"; };
+		2440BA0517D6B02300B9DB00 /* DeveloperInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeveloperInfoViewController.h; sourceTree = "<group>"; };
+		2440BA0617D6B02300B9DB00 /* DeveloperInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeveloperInfoViewController.m; sourceTree = "<group>"; };
 		244AFC9917CE50D200273EF6 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
 		244AFC9A17CE50D200273EF6 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		244AFC9C17CE50E600273EF6 /* ScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleCell.h; sourceTree = "<group>"; };
@@ -337,6 +343,26 @@
 			path = "tab icons";
 			sourceTree = "<group>";
 		};
+		2440BA0317D68D0200B9DB00 /* Game Details */ = {
+			isa = PBXGroup;
+			children = (
+				2491D9D917D5866A0006E811 /* GameDetailViewController.h */,
+				2491D9DA17D5866A0006E811 /* GameDetailViewController.m */,
+				2440BA0017D68CFC00B9DB00 /* ScoreReportingViewController.h */,
+				2440BA0117D68CFC00B9DB00 /* ScoreReportingViewController.m */,
+			);
+			name = "Game Details";
+			sourceTree = "<group>";
+		};
+		2440BA0417D6AE8800B9DB00 /* User Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				2406874F17D1A63F0028F8EA /* AccountViewController.h */,
+				2406875017D1A63F0028F8EA /* AccountViewController.m */,
+			);
+			name = "User Accounts";
+			sourceTree = "<group>";
+		};
 		244AFC9817CE4E9E00273EF6 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,10 +371,11 @@
 				248ED15D17CEE90E00CAE0C9 /* SideBar Controller */,
 				24813A0217CDACEA00DAD46F /* MainViewController.h */,
 				24813A0317CDACEA00DAD46F /* MainViewController.m */,
-				2406874F17D1A63F0028F8EA /* LogInViewController.h */,
-				2406875017D1A63F0028F8EA /* LogInViewController.m */,
+				2440BA0417D6AE8800B9DB00 /* User Accounts */,
 				2401EEC717CC0A1800C58BE5 /* ViewController.h */,
 				2401EEC817CC0A1800C58BE5 /* ViewController.m */,
+				2440BA0517D6B02300B9DB00 /* DeveloperInfoViewController.h */,
+				2440BA0617D6B02300B9DB00 /* DeveloperInfoViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -360,8 +387,7 @@
 				244AFC9D17CE50E600273EF6 /* ScheduleCell.m */,
 				244AFC9917CE50D200273EF6 /* ScheduleViewController.h */,
 				244AFC9A17CE50D200273EF6 /* ScheduleViewController.m */,
-				2491D9D917D5866A0006E811 /* GameDetailViewController.h */,
-				2491D9DA17D5866A0006E811 /* GameDetailViewController.m */,
+				2440BA0317D68D0200B9DB00 /* Game Details */,
 			);
 			name = Schedules;
 			sourceTree = "<group>";
@@ -576,6 +602,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2440BA0217D68CFC00B9DB00 /* ScoreReportingViewController.m in Sources */,
 				24B491E217CC7BA7007E85CE /* RosterViewController.m in Sources */,
 				2401EEB917CC0A1800C58BE5 /* main.m in Sources */,
 				2401EEBD17CC0A1800C58BE5 /* AppDelegate.m in Sources */,
@@ -585,7 +612,8 @@
 				2401EEC917CC0A1800C58BE5 /* ViewController.m in Sources */,
 				2491D9DB17D5866A0006E811 /* GameDetailViewController.m in Sources */,
 				244AFC9B17CE50D200273EF6 /* ScheduleViewController.m in Sources */,
-				2406875117D1A63F0028F8EA /* LogInViewController.m in Sources */,
+				2406875117D1A63F0028F8EA /* AccountViewController.m in Sources */,
+				2440BA0717D6B02300B9DB00 /* DeveloperInfoViewController.m in Sources */,
 				248ED15C17CEE89F00CAE0C9 /* SideBarCell.m in Sources */,
 				244AFC9E17CE50E600273EF6 /* ScheduleCell.m in Sources */,
 				24725FEA17CD4EAD007DB005 /* SWRevealViewController.m in Sources */,

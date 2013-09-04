@@ -6,17 +6,17 @@
 //  Copyright (c) 2013 Sam Gutentag. All rights reserved.
 //
 
-#import "LogInViewController.h"
+#import "AccountViewController.h"
 #import "SWRevealViewController.h"
 #import "MainViewController.h"
 
-@interface LogInViewController ()
+@interface AccountViewController ()
 
 @end
 
-@implementation LogInViewController
+@implementation AccountViewController
 
-@synthesize currentUserLabel;
+@synthesize currentUserLabel, logOutButtonLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,22 +41,29 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    
     // is no user is logged in
     if (![PFUser currentUser]) {
         // Customize the Log In View Controller
         PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
         [logInViewController setDelegate:self];
-        [logInViewController setFields: PFLogInFieldsLogInButton | PFLogInFieldsTwitter | PFLogInFieldsDismissButton | PFLogInFieldsSignUpButton | PFLogInFieldsUsernameAndPassword];
+        [logInViewController setFields: PFLogInFieldsLogInButton | PFLogInFieldsDismissButton | PFLogInFieldsSignUpButton | PFLogInFieldsUsernameAndPassword];
         
         // Present Log In View Controller
         [self presentViewController:logInViewController animated:YES completion:NULL];
+        
+        
     } else {
         // set label
         currentUserLabel.text = [NSString stringWithFormat:@"Current User is:\n\n%@", [PFUser currentUser].username];
         [currentUserLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
         [currentUserLabel setTextAlignment:NSTextAlignmentCenter];
-        currentUserLabel.textColor = [UIColor blackColor];
+        currentUserLabel.textColor = [UIColor whiteColor];
+        
+        logOutButtonLabel.text = @"Log Out";
+        [logOutButtonLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
+        [logOutButtonLabel setTextAlignment:NSTextAlignmentCenter];
+        logOutButtonLabel.textColor = [UIColor whiteColor];
+        
 
     }
 }
@@ -205,6 +212,15 @@
 - (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
     NSLog(@"User dismissed the signUpViewController");
 }
+
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

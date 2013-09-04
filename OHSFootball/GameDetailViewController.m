@@ -25,6 +25,7 @@
 @synthesize teamGradLightR, teamGradLightB, teamGradLightG;
 @synthesize opponentGradDarkR, opponentGradDarkB, opponentGradDarkG;
 @synthesize opponentGradLightR, opponentGradLightB, opponentGradLightG;
+@synthesize reportScoresLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -79,18 +80,28 @@
     //--------------------------------------------------------------------------
     // Game Address
     //--------------------------------------------------------------------------
-    gameLocationLabel.text = gameLocation;
-    [gameLocationLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
-    gameLocationLabel.textColor = [UIColor whiteColor];
-    gameLocationLabel.textAlignment = NSTextAlignmentLeft;
-    
-    //--------------------------------------------------------------------------
-    // Game Address - TBA Address
-    //--------------------------------------------------------------------------
     if ([[gameLocation substringToIndex:3] isEqualToString:@"TBA"]) {
         
         gameLocationLabel.text = @"This is awkward...\nWe don't have an address\nfor this game right now.";
+    } else {
+
+    
+    gameLocationLabel.text = [NSString stringWithFormat:@"Get Directions:\n%@", gameLocation];
     }
+    
+    [gameLocationLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
+    gameLocationLabel.textColor = [UIColor whiteColor];
+    gameLocationLabel.textAlignment = NSTextAlignmentLeft;
+
+    
+    
+    //--------------------------------------------------------------------------
+    // Report Scores Button
+    //--------------------------------------------------------------------------
+    reportScoresLabel.text = @"Report Score";
+    [reportScoresLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
+    reportScoresLabel.textColor = [UIColor whiteColor];
+    reportScoresLabel.textAlignment = NSTextAlignmentLeft;
     
     //--------------------------------------------------------------------------
     // Home Game Indicator
@@ -177,6 +188,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)reportScoresButtonPressed:(id)sender {
+    UIAlertView *messageAlert = [[UIAlertView alloc]
+                                 initWithTitle:@"Report Scores"
+                                 message:@"Are you logged in?"
+                                 delegate:self
+                                 cancelButtonTitle:@"OK"
+                                 otherButtonTitles: nil];
+    
+    // Display Alert Message
+    [messageAlert show];
 }
 
 @end
