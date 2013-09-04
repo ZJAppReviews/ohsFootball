@@ -14,6 +14,9 @@
 
 @implementation ScoreReportingViewController
 
+@synthesize teamNameLabel, opponentNameLabel, teamMascotLabel, opponentMascotLabel;
+@synthesize teamName, opponentName, teamScore, opponentScore, teamMascot, opponentMascot;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,7 +34,29 @@
     
     // view title
     self.title = @"Report Score";
+    
+    teamMascotLabel.text = teamMascot;
+    opponentMascotLabel.text = opponentMascot;
 }
+
+
+
+- (IBAction)goBackButton:(id)sender {
+    
+    NSLog(@"Go back button pressed");
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)submitScoreButton:(id)sender {
+    
+    NSLog(@"Submit Score Button Pressed");
+    
+    // submit score here somehow....
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {

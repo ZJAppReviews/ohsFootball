@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface GameDetailViewController : UIViewController
+@interface GameDetailViewController : UIViewController <PFLogInViewControllerDelegate>
 
 @property (nonatomic, strong) IBOutlet UILabel *teamMascotLabel;
 @property (nonatomic, strong) NSString *teamMascot;

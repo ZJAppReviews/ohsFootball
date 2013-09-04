@@ -32,7 +32,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.title = @"Log In View";
+    self.title = @"User Accounts";
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
@@ -70,7 +70,7 @@
 
 - (IBAction)logOut:(id)sender {
     UIAlertView *messageAlert = [[UIAlertView alloc]
-                                 initWithTitle:@""
+                                 initWithTitle:@"Whoa now!"
                                  message:@"Are you sure you want to log out?"
                                  delegate:self
                                  cancelButtonTitle:@"Nevermind"
@@ -92,37 +92,6 @@
 	}
     
 }
-
-
-//------------------------------------------------------------------------------
-//      Parse Log In Pop Up
-//------------------------------------------------------------------------------
-/*
- 
- - (void)viewDidAppear:(BOOL)animated {
- [super viewDidAppear:animated];
- 
- // is no user is logged in
- if (![PFUser currentUser]) {
- // Customize the Log In View Controller
- PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
- [logInViewController setDelegate:self];
- [logInViewController setFields: PFLogInFieldsLogInButton | PFLogInFieldsTwitter | PFLogInFieldsDismissButton | PFLogInFieldsSignUpButton | PFLogInFieldsUsernameAndPassword];
- 
- NSLog([NSString stringWithFormat:@"Log in User: %@", [PFUser currentUser]]);
- 
- // Present Log In View Controller
- [self presentViewController:logInViewController animated:YES completion:NULL];
- } else {
- // ohterwise log them out
- //[PFUser logOut];
- 
- NSLog(@"logged out user");
- 
- }
- }
- 
- */
 
 //------------------------------------------------------------------------------
 //      Log In Delegation Methods
@@ -159,14 +128,9 @@
 
 // Sent to the delegate when the log in screen is dismissed.
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
-    [self.navigationController popViewControllerAnimated:YES];
-    
-    [self performSegueWithIdentifier:@"toMainView" sender:self];
-    
-    
+    MainViewController *mainView = [self.storyboard instantiateViewControllerWithIdentifier:@"MainViewController"];
+    [self.navigationController pushViewController:mainView animated:YES];
 }
-
-
 
 //------------------------------------------------------------------------------
 //      Sign Up Delegation Methods
@@ -199,7 +163,6 @@
 
 // Sent to the delegate when a PFUser is signed up.
 - (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
-    //    [self dismissModalViewControllerAnimated:YES]; // Dismiss the PFSignUpViewController
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 

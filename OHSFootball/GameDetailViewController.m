@@ -7,6 +7,8 @@
 //
 
 #import "GameDetailViewController.h"
+#import "ScoreReportingViewController.h"
+#import "AccountViewController.h"
 
 @interface GameDetailViewController ()
 
@@ -86,7 +88,7 @@
     } else {
 
     
-    gameLocationLabel.text = [NSString stringWithFormat:@"Get Directions:\n%@", gameLocation];
+    gameLocationLabel.text = [NSString stringWithFormat:@"%@", gameLocation];
     }
     
     [gameLocationLabel setFont:[UIFont fontWithName:@"Roboto" size:16]];
@@ -192,15 +194,52 @@
 
 
 - (IBAction)reportScoresButtonPressed:(id)sender {
+    
+    
+    
+    if ([PFUser currentUser]) {
+        NSLog(@"REPORT SCORE!");
+        
+        // modally present the score reporter view
+        ScoreReportingViewController *reportScoreView = [self.storyboard instantiateViewControllerWithIdentifier:@"ScoreReportingViewController"];
+        reportScoreView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        
+        // pass info through segue
+        reportScoreView.teamMascot = teamMascot;
+        reportScoreView.opponentMascot = opponentMascot;
+
+        
+        
+        [self presentViewController:reportScoreView animated:YES completion: nil];
+        
+    }else {
+    
+    
     UIAlertView *messageAlert = [[UIAlertView alloc]
-                                 initWithTitle:@"Report Scores"
-                                 message:@"Are you logged in?"
+                                 initWithTitle:@"Hold Up!"
+                                 message:@"You need an account to report scores."
                                  delegate:self
-                                 cancelButtonTitle:@"OK"
-                                 otherButtonTitles: nil];
+                                 cancelButtonTitle:@"Nevermind"
+                                 otherButtonTitles:@"Sign Me Up!", nil];
     
     // Display Alert Message
     [messageAlert show];
+    }
+}
+
+
+// handle alerts
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
+    if([title isEqualToString:@"Sign Me Up!"])
+	{
+        // go to user sign in controller
+        AccountViewController *accountLogInView = [self.storyboard instantiateViewControllerWithIdentifier:@"AccountViewController"];
+        [self.navigationController pushViewController:accountLogInView animated:YES];
+	}
+    
 }
 
 @end
