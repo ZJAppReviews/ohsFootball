@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>472EC377-B59F-4459-A149-21A0B6FD5442</string>
+	<key>IDESourceControlProjectName</key>
+	<string>OHSFootball</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EA97F811B0D22755CC00699A5D0A5EC996BC5CCD</key>
+		<string>https://bitbucket.org/samgutentag/ohsfootball.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>OHSFootball.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EA97F811B0D22755CC00699A5D0A5EC996BC5CCD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/samgutentag/ohsfootball.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EA97F811B0D22755CC00699A5D0A5EC996BC5CCD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EA97F811B0D22755CC00699A5D0A5EC996BC5CCD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>OHSFootball</string>
+		</dict>
+	</array>
+</dict>
+</plist>
